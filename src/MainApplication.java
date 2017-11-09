@@ -17,14 +17,17 @@ public class MainApplication {
 				break;
 		}
 		
-		if (value==1)
-			//call user application
+		if (value==1){
+			UserApplication.main();
 			System.out.println();
-		
-		else
-			//call staff application
+		}
+		else{
+			StaffApplication.main();
 			System.out.println();
-			
+		}
+
+		System.out.println("Closing Application...");
+
 		sc.close();
 	}
 }

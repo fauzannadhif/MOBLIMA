@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class UserApplication {
 	private static Scanner sc = new Scanner(System.in);
-	User user = new User(); //User class not available yet
+	private static User user;
 	
 	public static void main() {
 		
@@ -10,7 +10,10 @@ public class UserApplication {
 		System.out.println("Name: ");
 		String name = sc.next();
 		System.out.println("Age: ");
-		String age = sc.next();
+		int age = sc.nextInt();
+		user = new User(name);
+		user.setAge(age);
+
 		int choice = 0;
 		
 		while (choice != 8) {
