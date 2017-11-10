@@ -48,7 +48,7 @@ public class UserApplication {
 				System.out.println(Movies.getMovie());
 				System.out.println("Please choose the movie you want to view");
 				int movieInput = sc.nextInt();
-				Movie ChosenMovie = Movies.getMovie().get(movieInput);
+				Movie ChosenMovie = Movies.getMovie().get(movieInput-1);
 					
 				System.out.println("Here is the details of the movie: ");
 				System.out.print("Title: ");
@@ -69,6 +69,7 @@ public class UserApplication {
 				break;
 				
 			case 4: //choose cineplex; choose movie; choose time; show: array list of seats
+				
 				break;
 				
 			case 5: //choose cineplex; choose movie; choose time; choose seat; show: tickets, seats, amount to be paid; approve? (if yes, add to booking history)
