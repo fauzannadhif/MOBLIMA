@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class User{
     private String name;
     private int age;
-    private ArrayList<Integer> bookingHistory;
+    private ArrayList<String> bookingHistory;
 
     public User(String name){
         this.name = name;
@@ -19,7 +19,7 @@ public class User{
         return this.age;
     }
 
-    public ArrayList<Integer> getBookingHistory(){
+    public ArrayList<String> getBookingHistory(){
         return this.bookingHistory;
     }
 
@@ -31,7 +31,7 @@ public class User{
         this.age = age;
     }
 
-    public void addBookingHistory(int newBooking){
+    public void addBookingHistory(String newBooking){
         this.bookingHistory.add(newBooking);
     }
 
