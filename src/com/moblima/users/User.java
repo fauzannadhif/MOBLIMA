@@ -31,7 +31,7 @@ public class User{
         this.age = age;
     }
 
-    public void addBookingHistory(Integer newBooking){
+    public void addBookingHistory(int newBooking){
         this.bookingHistory.add(newBooking);
     }
 
