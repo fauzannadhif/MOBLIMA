@@ -2,6 +2,8 @@ package com.moblima.Application;
 
 import java.util.Scanner;
 import com.moblima.users.User;
+import com.moblima.movie.MovieList;
+import com.moblima.movie.Movie;
 
 public class UserApplication {
 	private static Scanner sc = new Scanner(System.in);
@@ -16,6 +18,7 @@ public class UserApplication {
 		int age = sc.nextInt();
 		user = new User(name);
 		user.setAge(age);
+		MovieList Movies = new MovieList();
 
 		int choice = 0;
 		
@@ -37,30 +40,31 @@ public class UserApplication {
 				break;
 				
 			case 2: //list movie
-				MovieList.getMovie()
+				Movies.getMovie();
 				break;
 				
 			case 3: //select movie, list the details
 				System.out.println("Here are the movies available: ");
-				MovieList.getMovie();
+				System.out.println(Movies.getMovie());
 				System.out.println("Please choose the movie you want to view");
-				int movieInput = sc.next();
+				int movieInput = sc.nextInt();
+				Movie ChosenMovie = Movies.getMovie().get(movieInput);
 					
 				System.out.println("Here is the details of the movie: ");
 				System.out.print("Title: ");
-				Movie.getTitle();
+				ChosenMovie.getTitle();
 				System.out.print("Showing status: ");
-				Movie.getStatus();
+				ChosenMovie.getStatus();
 				System.out.print("Synopsis: ");
-				Movie.getSynopsis();
+				ChosenMovie.getSynopsis();
 				System.out.print("Director: ");
-				Movie.getDirector();
+				ChosenMovie.getDirector();
 				System.out.print("Casts: ");
-				Movie.getCast();
+				ChosenMovie.getCast();
 				System.out.print("Overall reviewer rating: ");
-				Movie.getOverallRating();
+				ChosenMovie.getOverallRating();
 				System.out.print("Reviews: ");
-				Movie.getReview();
+				ChosenMovie.getReview();
 					
 				break;
 				
@@ -71,13 +75,13 @@ public class UserApplication {
 				break;
 				
 			case 6: //list all movies booked, show: transaction id, movie, cinema, cineplex, date/time, tickets, seats, total amount
-				User.getBookingHistory();
+				user.getBookingHistory();
 				break;
 				
 			case 7: 
 				System.out.println("Sort by ticket sales or ratings? 1 for ticket sales, 2 for ratings");
 				int inputTop5 = sc.nextInt();
-				MovieList.sortMovie(inputTop5);	
+				Movies.sortMovie(inputTop5);	
 				break;
 			
 			case 8:

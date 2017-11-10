@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class MovieList {
 	private ArrayList<Movie> Movies;
-	MovieList(){
+	public MovieList(){
 		//FILEIO
 	}
 	public void addMovie(Movie newMovie){
