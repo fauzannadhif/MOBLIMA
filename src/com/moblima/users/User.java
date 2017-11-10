@@ -1,3 +1,5 @@
+package com.moblima.users;
+
 import java.util.ArrayList;
 public class User{
     private String name;
