@@ -88,6 +88,24 @@ public class UserApplication {
 				break;
 				
 			case 5: //choose cineplex; choose movie; choose time; choose seat; show: tickets, seats, amount to be paid; approve? (if yes, add to booking history)
+				System.out.println("Here are the list of cineplex available: ");
+				//show the list of cineplex
+				System.out.println("Please choose the cineplex you want");
+				int cineplexInput = sc.nextInt(); //the input will be the index of the cineplex array list
+				System.out.println("Here are the list of cinema in " + ??? + " cineplex: ");
+				Cineplex.getCinemaList();
+				System.out.println("Please choose the cinema");
+				int cinemaInput = sc.nextInt();
+				Cinema chosenCinema = CinemaList.getCinema().get(cinemaInput-1);\
+				
+				System.out.print("The movie shown is: ");
+				Movie chosenMovie = chosenCinema.getMovieShown();
+				System.out.println("The available time slot for " + chosenMovie + " are: ");
+				
+				//show the time, choose time, show seat, choose seat
+				//print no of tickets, the seats chosen, total amount
+				//proceed? if yes, add to booking history. if no, go back
+				
 				break;
 				
 			case 6: //list all movies booked, show: transaction id, movie, cinema, cineplex, date/time, tickets, seats, total amount
