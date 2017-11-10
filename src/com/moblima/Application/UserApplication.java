@@ -69,7 +69,12 @@ public class UserApplication {
 				break;
 				
 			case 4: //choose cineplex; choose movie; choose time; show: array list of seats
-				
+				System.out.println("Here are the list of cineplex available: ");
+				//show the list of cineplex
+				System.out.println("Please choose the cineplex you want");
+				int cineplexInput = sc.nextInt(); //the input will be the index of the cineplex array list
+				System.out.println("Here are the list of cinema in " + ??? + " cineplex: ");
+				//get the list of cinema available in the cineplex
 				break;
 				
 			case 5: //choose cineplex; choose movie; choose time; choose seat; show: tickets, seats, amount to be paid; approve? (if yes, add to booking history)
