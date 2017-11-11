@@ -8,7 +8,7 @@ public class Cinema{
     private String Type;
     private String CinemaCode;
 
-    public Cinema(String CinemaCode){
+    public Cinema(String CinemaCode, String CineplexName){
         this.CinemaCode = CinemaCode;
     }
     public ArrayList<Boolean> getSeat(){
