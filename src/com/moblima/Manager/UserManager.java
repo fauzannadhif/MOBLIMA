@@ -18,7 +18,7 @@ public class UserManager{
     public String bookMovie(Movie movie,Date date,Cinema cinema,Cineplex cineplex){
         this.bookingID = cinema.getCinemaCode()+"date/time"; // TODO: Do Date/Time
         user.addBookingHistory(bookingID);
-        TicketPrice ticketprice = new TicketPrice(false,user.getAge(),movie.getType(),cinema.getType())
+        TicketPrice ticketprice = new TicketPrice(false,user.getAge(),movie.getType(),cinema.getType());
         Double price = ticketprice.getPrice();
         System.out.println("Your price = "+price);
         return bookingID;

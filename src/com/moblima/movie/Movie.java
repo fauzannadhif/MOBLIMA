@@ -16,6 +16,7 @@ public class Movie {
 	private ArrayList<Integer> Rating;
 	private ArrayList<String> Review;
 	private String AgeRating;
+	private int TicketSales;
 	
 	public Movie(String Title){
 		this.Title = Title;
@@ -97,6 +98,14 @@ public class Movie {
 
 	public void setAgeRating(String ageRating) {
 		AgeRating = ageRating;
+	}
+
+	public int getTicketSales() {
+		return TicketSales;
+	}
+
+	public void setTicketSales(int ticketsales) {
+		TicketSales = ticketsales;
 	}
 
 }
