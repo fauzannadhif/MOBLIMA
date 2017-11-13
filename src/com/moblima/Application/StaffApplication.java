@@ -32,6 +32,7 @@ public class StaffApplication {
 		MovieList Movies = new MovieList(); 
 		Movie ChosenMovie;
 		String MovieName;
+		ShowTimeList ShowTimes = new ShowTimeList();
 		
 		int choice = 0;
 		
@@ -53,7 +54,6 @@ public class StaffApplication {
 				System.out.println("Please enter the movie title:");
 				MovieName = sc.next();
 				Movie newMovie = new Movie(MovieName);
-				Movies.addMovie(newMovie);
 				System.out.println("Status:");
 				newMovie.setStatus(sc.next());
 				System.out.println("Synopsis:");
@@ -79,6 +79,7 @@ public class StaffApplication {
 				newMovie.setCast(casts);
 				System.out.println("AgeRating:");
 				newMovie.setAgeRating("sc.next()");
+				Movies.addMovie(newMovie);
 
 				break;
 				
