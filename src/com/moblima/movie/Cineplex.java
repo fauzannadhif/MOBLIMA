@@ -12,6 +12,21 @@ public class Cineplex{
     private String Location;
     private static final String separator = "|";
 
+    public Cineplex(String name){
+        this.Name = name;
+        //TODO: Change filename
+        try{
+            this.CinemaList = readCinemaList("Database2.txt");
+        }catch(IOException e){
+            System.out.println("IOException > " + e.getMessage());
+        }
+        try{
+            this.Location = readLocation("Database.txt");            
+        }catch (IOException e){
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
     // Parse String Array into CinemaList
     public ArrayList<Cinema> readCinemaList(String filename) throws IOException{
         ArrayList<Cinema> resultCinemaList = new ArrayList<Cinema>();
@@ -22,7 +37,8 @@ public class Cineplex{
             StringTokenizer star = new StringTokenizer(st, separator);
             String name = star.nextToken().trim();
             if (name == Name){
-                while (star != null){
+                int NumberOfToken = star.countTokens();
+                for (int j = 0; j<NumberOfToken; j++){
                     cinema = new Cinema(star.nextToken(), Name);
                     resultCinemaList.add(cinema);
                 }
@@ -62,19 +78,6 @@ public class Cineplex{
         return data;
     }
 
-    public Cineplex(String name){
-        this.Name = name;
-        try{
-            this.CinemaList = readCinemaList("Database2.txt");
-        }catch(IOException e){
-            System.out.println("IOException > " + e.getMessage());
-        }
-        try{
-            this.Location = readLocation("Database.txt");            
-        }catch (IOException e){
-            System.out.println("IOException > " + e.getMessage());
-        }
-    }
 
     public String getName(){
         return this.Name;

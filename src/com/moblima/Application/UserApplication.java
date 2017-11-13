@@ -23,8 +23,8 @@ public class UserApplication {
 		Cinema ChosenCinema;
 		Movie ChosenMovie;
 		String CineplexName;
-		String CinemaName;
 		String MovieName;
+		String CinemaCode;
 		
 
 		int choice = 0;
