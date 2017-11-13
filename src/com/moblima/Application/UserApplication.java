@@ -46,7 +46,9 @@ public class UserApplication {
 				break;
 				
 			case 2: //list movie
-				Movies.getMovie();
+				for (int i=0; i<Movies.getMovie().size(); i++) {
+					System.out.println((i+1) + ". " + (Movies.getMovie().get(i)));
+				}
 				break;
 				
 			case 3: //select movie, list the details
