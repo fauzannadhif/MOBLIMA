@@ -16,6 +16,11 @@ public class MovieList {
 	public ArrayList<Movie> getMovie(){
 		return this.Movies;
 	}
+
+	public void removeMovie(Movie removedMovie){
+		Movies.set(Movies.indexOf(removedMovie), Movies.get(Movies.size()-1));
+		Movies.remove(Movies.size()-1);
+	}
 	
 	public ArrayList<Movie> sortMovie(int choice){
 		ArrayList<Movie> sortedMovies = Movies;

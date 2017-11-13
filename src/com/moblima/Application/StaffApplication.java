@@ -66,7 +66,7 @@ public class StaffApplication {
 				newMovie.setDirector(sc.next());
 				System.out.println("Type:");
 				newMovie.setType(sc.next());
-				System.out.println("Cast(please enter at least 2,0 to finish):");
+				System.out.println("Cast(please enter at least 2 casts, press 0 to finish):");
 				ArrayList<String> casts = new ArrayList<String>();
 				int i=0;
 				while(true){
@@ -82,13 +82,77 @@ public class StaffApplication {
 				}
 				newMovie.setCast(casts);
 				System.out.println("AgeRating:");
+				newMovie.setAgeRating("sc.next()");
 
 				break;
 				
 			case 2: //update the details of existing movies
+				System.out.println("Please select the movie you want to update(please input the no.)");
+				for (int index=0; index<Movies.getMovie().size(); index++){
+					System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+				}
+				ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
+				System.out.println("What would you like to edit from this movie?");
+				System.out.println("1. Title");
+				System.out.println("2. Status");
+				System.out.println("3. Synopsis");
+				System.out.println("4. Director");
+				System.out.println("5. Type");
+				System.out.println("6. Cast");
+				System.out.println("7. Age Rating");
+				int input = sc.nextInt();
+				if(input == 1){
+					System.out.println("Old title: " + ChosenMovie.getTitle());
+					System.out.println("Please enter the new title");
+					ChosenMovie.setTitle(sc.next());
+				}
+				if(input == 2)
+					System.out.println("Old status: " + ChosenMovie.getStatus());
+					System.out.println("Please enter the new status");
+					ChosenMovie.setStatus(sc.next());	
+				if(input == 3)
+					System.out.println("Old synopsis: " + ChosenMovie.getSynopsis());
+					System.out.println("Please enter the new synopsis");
+					ChosenMovie.setSynopsis(sc.next());
+				if(input == 4)
+					System.out.println("Old director: " + ChosenMovie.getDirector());
+					System.out.println("Please enter the new director");
+					ChosenMovie.setDirector(sc.next());				
+				if(input == 5)
+					System.out.println("Old type: " + ChosenMovie.getType());
+					System.out.println("Please enter the new type");
+					ChosenMovie.setType(sc.next());
+				if(input == 6)
+					System.out.println("Old casts: " + ChosenMovie.getCast());
+					System.out.println("Please enter the new casts(Please enter at least 2 casts, press 0 to finish");
+					ArrayList<String> newcasts = new ArrayList<String>();
+					int j=0;
+					while(true){
+						String desiredINPUT = sc.next();
+						if(desiredINPUT=="0" && j>=2)
+							break;
+						else if(desiredINPUT=="0" && j<2)
+							System.out.println("Please add more cast");
+						else{	
+							newcasts.add(desiredINPUT);
+							j++;
+						}					
+					}
+					ChosenMovie.setCast(newcasts);
+				if(input == 7)
+					System.out.println("Old age rating: " + ChosenMovie.getAgeRating());
+					System.out.println("Please enter the new age rating");
+					ChosenMovie.setAgeRating(sc.next());
+
 				break;
 				
 			case 3: //remove a movie from the list
+					System.out.println("Which movie would you like to remove? (please input the no.)");
+					for (int index=0; index<Movies.getMovie().size(); index++){
+						System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+					}
+					ChosenMovie = Movies.getMovie().get(sc.nextInt());
+					Movies.removeMovie(ChosenMovie);
 				break;
 				
 			case 4: //create new showtime for a movie
