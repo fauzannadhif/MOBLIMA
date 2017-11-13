@@ -15,6 +15,7 @@ public class UserApplication {
 		String name = sc.next();
 		System.out.println("Age: ");
 		int age = sc.nextInt();
+		
 		user = new User(name);
 		user.setAge(age);
 		MovieList Movies = new MovieList();
