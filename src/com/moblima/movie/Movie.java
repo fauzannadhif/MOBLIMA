@@ -108,4 +108,8 @@ public class Movie {
 		TicketSales = ticketsales;
 	}
 
+	public void addTicketSales() {
+		TicketSales --;
+	}
+
 }
