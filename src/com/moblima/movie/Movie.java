@@ -18,9 +18,14 @@ public class Movie {
 	private String AgeRating;
 	private int TicketSales;
 	
-	public Movie(String Title){
+	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,String AgeRating){
 		this.Title = Title;
-		//TODO: FileIO
+		this.Status = Status;
+		this.Synopsis = Synopsis;
+		this.Director = Director;
+		this.Type = Type;
+		this.Cast = Cast;
+		this.AgeRating = AgeRating;
 	}
 	
 	public String getTitle() {

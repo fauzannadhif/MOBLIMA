@@ -8,9 +8,11 @@ public class ShowTime{
     private Date date;
     private Cineplex cineplex;
 
-    public ShowTime(Movie MovieShown){
+    public ShowTime(Movie MovieShown,Cinema cinema,Date date,Cineplex cineplex){
         this.MovieShown = MovieShown;
-        //File IO
+        this.cinema = cinema;
+        this.date = date;
+        this.cineplex = cineplex;
     }
 
     public Movie getMovieShown() {

@@ -53,17 +53,17 @@ public class StaffApplication {
 			case 1: //add new movie with its details
 				System.out.println("Please enter the movie title:");
 				MovieName = sc.next();
-				Movie newMovie = new Movie(MovieName);
+				
 				System.out.println("Status:");
-				newMovie.setStatus(sc.next());
+				String Status = sc.next();
 				System.out.println("Synopsis:");
-				newMovie.setSynopsis(sc.next());
+				String Synopsis = sc.next();
 				System.out.println("Director:");
-				newMovie.setDirector(sc.next());
+				String Director = sc.next();
 				System.out.println("Type:");
-				newMovie.setType(sc.next());
+				String Type = sc.next();
 				System.out.println("Cast(please enter at least 2 casts, press 0 to finish):");
-				ArrayList<String> casts = new ArrayList<String>();
+				ArrayList<String> Cast = new ArrayList<String>();
 				int i=0;
 				while(true){
 					String desiredINPUT = sc.next();
@@ -72,13 +72,14 @@ public class StaffApplication {
 					else if(desiredINPUT=="0" && i<2)
 						System.out.println("Please add more cast");
 					else{	
-						casts.add(desiredINPUT);
+						Cast.add(desiredINPUT);
 						i++;
 					}					
 				}
-				newMovie.setCast(casts);
 				System.out.println("AgeRating:");
-				newMovie.setAgeRating("sc.next()");
+				String AgeRating = sc.next();
+
+				Movie newMovie = new Movie(MovieName,Status,Synopsis,Director,Type,Cast,AgeRating);
 				Movies.addMovie(newMovie);
 
 				break;
@@ -148,11 +149,19 @@ public class StaffApplication {
 					for (int index=0; index<Movies.getMovie().size(); index++){
 						System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
 					}
-					ChosenMovie = Movies.getMovie().get(sc.nextInt());
+					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
 					Movies.removeMovie(ChosenMovie);
 				break;
 				
 			case 4: //create new showtime for a movie
+					System.out.println("Here are the movies without showtime:");
+					for (int index=0; index<Movies.getMovie().size();index++){
+						if (true){
+							System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+						} //create condition for the movie not in showtime
+					}
+					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);					
+					ShowTime newshowtime = new ShowTime(ChosenMovie);
 				break;
 				
 			case 5: //update the showtime of a movie
