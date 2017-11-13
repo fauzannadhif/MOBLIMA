@@ -38,3 +38,10 @@ hs_err_pid*
 
 # Java annotation processor (APT)
 .factorypath
+
+# VSCode Settings
+.vscode/
+
+# Eclipse Specific
+.project
+.classpath
