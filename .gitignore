@@ -41,7 +41,3 @@ hs_err_pid*
 
 # VSCode Settings
 .vscode/
-
-# Eclipse Specific
-.project
-.classpath
