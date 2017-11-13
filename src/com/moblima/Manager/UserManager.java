@@ -21,4 +21,28 @@ public class UserManager{
         return bookingID;
     }
     
+    public ArrayList<String> listMovie(MovieLists movies){
+        ArrayList<String> result=ArrayList<String>();
+        for (int i=0; i<Movies.getMovie().size(); i++) {
+			result.add(Movies.getMovie().get(i).getTitle());
+        }
+        return result
+    }
+    
+    public ArrayList<String> detailMovie(MovieDetails movies){
+        ArrayList<String> details=ArrayList<String>();
+        for (int i=0; i<Movies.getMovie().size(); i++) {
+				details.add (Movies.getMovie().get(i).getTitle());
+                details.add (Movies.getMovie().get(i).getStatus());
+                details.add (Movies.getMovie().get(i).getSynopsis());
+                details.add (Movies.getMovie().get(i).getDirector());
+                details.add (Movies.getMovie().get(i).getCast());
+                details.add (Movies.getMovie().get(i).getOverallRating());
+                details.add (Movies.getMovie().get(i).getReview();
+		}
+        return details
+    }
+        
+    
+    
 }
