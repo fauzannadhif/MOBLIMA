@@ -4,6 +4,7 @@ import java.util.Scanner;
 import com.moblima.users.Staff;
 import com.moblima.movie.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class StaffApplication {
 	private static Scanner sc = new Scanner(System.in);
@@ -33,6 +34,10 @@ public class StaffApplication {
 		Movie ChosenMovie;
 		String MovieName;
 		ShowTimeList ShowTimes = new ShowTimeList();
+		ArrayList<Movie> ShownMovies = new ArrayList<Movie>();
+		for(int i=0;i<ShowTimes.getShowTimes().size();i++){
+			ShownMovies.add(ShowTimes.getShowTimes().get(i).getMovieShown());
+		}
 		
 		int choice = 0;
 		
@@ -154,14 +159,28 @@ public class StaffApplication {
 				break;
 				
 			case 4: //create new showtime for a movie
+					// Movie
 					System.out.println("Here are the movies without showtime:");
+					int count = 0;
+					ArrayList<Integer> NoShowtimeIndex = new ArrayList<Integer>();
 					for (int index=0; index<Movies.getMovie().size();index++){
-						if (true){
-							System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+						if (! ShownMovies.contains(Movies.getMovie().get(index))){
+							count += 1;
+							NoShowtimeIndex.add(index);
+							System.out.println(count + ". " + Movies.getMovie().get(index).getTitle());
 						} //create condition for the movie not in showtime
 					}
-					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);					
-					ShowTime newshowtime = new ShowTime(ChosenMovie);
+					ChosenMovie = Movies.getMovie().get(NoShowtimeIndex.get(sc.nextInt()-1));
+					// Cineplex
+					System.out.println("On which cineplex?");
+					System.out.println("Cineplex List"); // TODO: CineplexList.getCineplexes();
+					Cineplex chosenCineplex = new Cineplex(sc.next());
+					// TODO: CineplexList.getCineplexes().get(sc.nextInt()-1);
+					Cinema chosenCinema = new Cinema("CinemaCode", chosenCineplex.getName());
+					// TODO: Change Cinema constructor
+					Date chosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+					ShowTime newshowtime = new ShowTime(ChosenMovie, chosenCinema, chosenDate, chosenCineplex);
+					ShowTimes.addShowTimes(newshowtime);
 				break;
 				
 			case 5: //update the showtime of a movie
