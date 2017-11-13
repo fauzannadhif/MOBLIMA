@@ -51,8 +51,11 @@ public class UserApplication {
 				
 			case 3: //select movie, list the details
 				System.out.println("Here are the movies available: ");
-				System.out.println(Movies.getMovie());
-				System.out.println("Please choose the movie you want to view");
+				// print the list of movies
+				for (int i=0; i<Movies.getMovie().size(); i++) {
+					System.out.println((i+1) + ". " + (Movies.getMovie().get(i)));
+				}
+				System.out.println("Please choose the movie you want to view: ");
 				int movieInput = sc.nextInt();
 				ChosenMovie = Movies.getMovie().get(movieInput-1);
 					
@@ -78,10 +81,13 @@ public class UserApplication {
 				System.out.println("Here are the list of cineplex available: ");
 				//show the list of cineplex
 				System.out.println("Please choose the cineplex you want");
-				CineplexName = sc.next(); //Input the name of the cineplex
+				CineplexName = sc.next(); //Input the name (or number?) of the cineplex
 				ChosenCineplex = new Cineplex(CineplexName);
 				System.out.println("Here are the list of cinema in " + ChosenCineplex.getName() + " cineplex: "); // TODO: Change ???
-				System.out.println(ChosenCineplex.getCinemaList());
+				// System.out.println(ChosenCineplex.getCinemaList());
+				for (int i=0; i<ChosenCineplex.getCinemaList().size(); i++) {
+					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i)));
+				}
 				System.out.println("Please choose the cinema");
 				CinemaName = sc.next();//Input the name of cinema
 				ChosenCinema = new Cinema(CinemaName, CineplexName);
@@ -103,7 +109,10 @@ public class UserApplication {
 				CineplexName = sc.next(); //the input will be the index of the cineplex array list
 				ChosenCineplex = new Cineplex(CineplexName);
 				System.out.println("Here are the list of cinema in " + ChosenCineplex.getName() + " cineplex: ");
-				System.out.println(ChosenCineplex.getCinemaList());
+				// System.out.println(ChosenCineplex.getCinemaList());
+				for (int i=0; i<ChosenCineplex.getCinemaList().size(); i++) {
+					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i)));
+				}
 				System.out.println("Please choose the cinema");
 				CinemaName = sc.next();
 				ChosenCinema = new Cinema(CinemaName, ChosenCineplex.getName());				
