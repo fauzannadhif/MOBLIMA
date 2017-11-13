@@ -16,12 +16,12 @@ public class Cinema{
         this.CinemaCode = CinemaCode;
         //TODO: Change Filename
         try{
-            this.Type = readCinemaType("Database3.txt");
+            this.Type = readCinemaType("CinemaType.txt");
         }catch(IOException e){
             System.out.println("IOException > " + e.getMessage());
         }
         try{
-            this.Seat = readSeat("Database4.txt");
+            this.Seat = readSeat("CinemaSeats.txt");
         }catch(IOException e){
             System.out.println("IOException > " + e.getMessage());
         }

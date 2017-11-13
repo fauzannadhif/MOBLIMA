@@ -16,12 +16,12 @@ public class Cineplex{
         this.Name = name;
         //TODO: Change filename
         try{
-            this.CinemaList = readCinemaList("Database2.txt");
+            this.CinemaList = readCinemaList("CineplexCinemaList.txt");
         }catch(IOException e){
             System.out.println("IOException > " + e.getMessage());
         }
         try{
-            this.Location = readLocation("Database.txt");            
+            this.Location = readLocation("CineplexLocation.txt");
         }catch (IOException e){
             System.out.println("IOException > " + e.getMessage());
         }
