@@ -48,7 +48,7 @@ public class UserApplication {
 				
 			case 2: //list movie
 				for (int i=0; i<Movies.getMovie().size(); i++) {
-					System.out.println((i+1) + ". " + (Movies.getMovie().get(i)));
+					System.out.println((i+1) + ". " + (Movies.getMovie().get(i).getTitle()));
 				}
 				break;
 				
@@ -56,7 +56,7 @@ public class UserApplication {
 				System.out.println("Here are the movies available: ");
 				// print the list of movies
 				for (int i=0; i<Movies.getMovie().size(); i++) {
-					System.out.println((i+1) + ". " + (Movies.getMovie().get(i)));
+					System.out.println((i+1) + ". " + (Movies.getMovie().get(i).getTitle()));
 				}
 				System.out.println("Please choose the movie you want to view: ");
 				int movieInput = sc.nextInt();
@@ -89,17 +89,17 @@ public class UserApplication {
 				System.out.println("Here are the list of cinema in " + ChosenCineplex.getName() + " cineplex: "); // TODO: Change ???
 				// System.out.println(ChosenCineplex.getCinemaList());
 				for (int i=0; i<ChosenCineplex.getCinemaList().size(); i++) {
-					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i)));
+					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i).getCinemaCode()));
 				}
 				System.out.println("Please choose the cinema");
-				CinemaName = sc.next();//Input the name of cinema
+				CinemaName = sc.nextInt();//Input the number from cinema list
 				ChosenCinema = new Cinema(CinemaName, CineplexName);
 				System.out.println("The movie shown is: ");
-				System.out.println(ChosenCinema.getMovieShown());
+				System.out.println(ChosenCinema.getMovieShown().getTitle());
 				System.out.println("Which Movie do you want to check?");
 				MovieName = sc.next();
 				ChosenMovie = new Movie(MovieName);
-				System.out.println("The available time slot for " + ChosenMovie.getTitle() + " are: ");
+				System.out.println("The available time slots for " + ChosenMovie.getTitle() + " are: ");
 				
 				//show the time and seats
 				
@@ -114,17 +114,17 @@ public class UserApplication {
 				System.out.println("Here are the list of cinema in " + ChosenCineplex.getName() + " cineplex: ");
 				// System.out.println(ChosenCineplex.getCinemaList());
 				for (int i=0; i<ChosenCineplex.getCinemaList().size(); i++) {
-					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i)));
+					System.out.println((i+1) + ". " + (ChosenCineplex.getCinemaList().get(i).getCinemaCode()));
 				}
 				System.out.println("Please choose the cinema");
 				CinemaName = sc.next();
 				ChosenCinema = new Cinema(CinemaName, ChosenCineplex.getName());				
 				System.out.println("The movie shown is: ");
-				System.out.println(ChosenCinema.getMovieShown());
+				System.out.println(ChosenCinema.getMovieShown().getTitle());
 				System.out.println("Which Movie do you want to watch?");
 				MovieName = sc.next();
 				ChosenMovie = new Movie(MovieName);
-				System.out.println("The available time slot for " + ChosenMovie.getTitle() + " are: ");
+				System.out.println("The available time slots for " + ChosenMovie.getTitle() + " are: ");
 				
 				//show the time, choose time, show seat, choose seat
 				//print no of tickets, the seats chosen, total amount
