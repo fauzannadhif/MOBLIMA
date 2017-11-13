@@ -6,7 +6,7 @@ public class TicketPrice {
 	private String MovieType;
 	private String CinemaClass;
 	private Double Price;
-	private Double[] Modifier={4.0,2.0,2.0,2.0,2.0,2.0,2.0};
+	private static Double[] Modifier={4.0,2.0,2.0,2.0,2.0,2.0,2.0};
 	public TicketPrice(Boolean isHoliday,int Age,String MovieType,String CinemaClass){
 		this.isHoliday=isHoliday;
 		this.Age=Age;
@@ -15,9 +15,9 @@ public class TicketPrice {
 		this.Price=Modifier[0];
 		if (isHoliday)
 			Price+=Modifier[1];
-		if ((Age >= 17) && (Age <= 30))
-			Price += Modifier[2];
-		if (Age>30)
+		if (Age<6)
+			Price -= Modifier[2];
+		if (Age>55)
 			Price += Modifier[3];
 		if (CinemaClass=="PREMIUM")
 			Price+= Modifier[4];
@@ -57,14 +57,14 @@ public class TicketPrice {
 	public void setPrice(Double price) {
 		Price = price;
 	}
-	public void setModifier(Double[] Modifier){
+	public static void setModifier(Double[] Modifier){
 		if (Modifier.length != 7){
 			return;
 		}
-		this.Modifier = Modifier;
+		TicketPrice.Modifier = Modifier;
 	}
-	public Double[] getModifier(){
-		return Modifier;
+	public static Double[] getModifier(){
+		return TicketPrice.Modifier;
 	}
 	
 }

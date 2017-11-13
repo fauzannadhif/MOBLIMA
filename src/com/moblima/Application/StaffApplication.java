@@ -29,12 +29,8 @@ public class StaffApplication {
 				System.out.println("Invalid username or password. Please try again.");
 		}
 
-		MovieList Movies = new MovieList();
-		Cineplex ChosenCineplex;
-		Cinema ChosenCinema;
+		MovieList Movies = new MovieList(); 
 		Movie ChosenMovie;
-		String CineplexName;
-		String CinemaName;
 		String MovieName;
 		
 		int choice = 0;
@@ -165,6 +161,57 @@ public class StaffApplication {
 				break;
 				
 			case 7: //configure system settings: ticket price, holidays, etc.
+					System.out.println("What would you like to configure?");
+					System.out.println("1. Ticket Price");
+					System.out.println("1. Ticket Price");
+					System.out.println("1. Ticket Price");
+					int pick = sc.nextInt();
+					if(pick==1){
+						System.out.println("What would you like to change?");
+						System.out.println("1. Base price");
+						System.out.println("2. Additional price for holiday");
+						System.out.println("3. Substractive price for children");
+						System.out.println("4. Substractive price for senior citizen");
+						System.out.println("5. Additional price for premium cinema");
+						System.out.println("6. Additional price for 3D movie");
+						System.out.println("7. Additional Price for blockbuster movie");
+						int option = sc.nextInt();
+						if(option==1){
+							System.out.println("The old base price is: " + TicketPrice.getModifier()[0]);
+							System.out.println("Please input your new base price: ");
+							TicketPrice.getModifier()[0] = sc.nextDouble();
+						}
+						if(option==2){
+							System.out.println("The old additional price for holiday is: " + TicketPrice.getModifier()[1]);
+							System.out.println("Please input your new additional price: ");
+							TicketPrice.getModifier()[1] = sc.nextDouble();
+						}
+						if(option==3){
+							System.out.println("The old substractive price for children is: " + TicketPrice.getModifier()[2]);
+							System.out.println("Please input your new substractive price: ");
+							TicketPrice.getModifier()[2] = sc.nextDouble();
+						}
+						if(option==4){
+							System.out.println("The old substractive price for senior citizen is: " + TicketPrice.getModifier()[3]);
+							System.out.println("Please input your new substractive price: ");
+							TicketPrice.getModifier()[3] = sc.nextDouble();
+						}
+						if(option==5){
+							System.out.println("The old additional price for premium cinema is: " + TicketPrice.getModifier()[4]);
+							System.out.println("Please input your new additional price: ");
+							TicketPrice.getModifier()[4] = sc.nextDouble();
+						}
+						if(option==6){
+							System.out.println("The old additional price for 3D movie is: " + TicketPrice.getModifier()[5]);
+							System.out.println("Please input your new additional price: ");
+							TicketPrice.getModifier()[5] = sc.nextDouble();
+						}
+						if(option==7){
+							System.out.println("The old additional price for blockbuster movie is: " + TicketPrice.getModifier()[6]);
+							System.out.println("Please input your new additional price: ");
+							TicketPrice.getModifier()[6] = sc.nextDouble();
+						}
+					}
 				break;
 			
 			case 8:
