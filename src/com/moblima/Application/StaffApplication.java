@@ -38,6 +38,7 @@ public class StaffApplication {
 		for(int i=0;i<ShowTimes.getShowTimes().size();i++){
 			ShownMovies.add(ShowTimes.getShowTimes().get(i).getMovieShown());
 		}
+		ShowTime ChosenShowTime;
 		
 		int choice = 0;
 		
@@ -170,6 +171,7 @@ public class StaffApplication {
 							System.out.println(count + ". " + Movies.getMovie().get(index).getTitle());
 						} //create condition for the movie not in showtime
 					}
+					System.out.println("Which movie would you like to add to showtime? (please input the no.)");
 					ChosenMovie = Movies.getMovie().get(NoShowtimeIndex.get(sc.nextInt()-1));
 					// Cineplex
 					System.out.println("On which cineplex?");
@@ -181,13 +183,49 @@ public class StaffApplication {
 					Date chosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 					ShowTime newshowtime = new ShowTime(ChosenMovie, chosenCinema, chosenDate, chosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
+					ShownMovies.add(ChosenMovie);
+					ChosenMovie.setStatus("Now Showing");
 				break;
 				
 			case 5: //update the showtime of a movie
+					System.out.println("Which showtime would you like to update?");
+					for(int index=0; index<ShownMovies.size(); index++){
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
+					}
+					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
+					System.out.println("What would you like to change?");
+					System.out.println("1. The Cineplex and Cinema");
+					System.out.println("2. The Date and Time");
+					int select = sc.nextInt();
+					if(select == 1){
+						System.out.println("Select the new Cineplex: ");
+						//for(int i=0; i<Cineplexes.getCineplex().size()); i++){
+						//	System.out.println((i+1)+". "+Cineplexes.getCineplex().get(i).getName());
+						//}
+						//ChosenCineplex = Cineplexes.getCineplex().get(sc.nextInt()-1);
+						//System.out.println("Select the new Cinema");
+						//for(int j=0; j<ChosenCineplex.getCinemaList().size()){}
+						//	System.out.println((j+1)+". "+ChosenCineplex.getCinemaList().get(j).getName());
+						//}
+						//ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
+						//ChosenShowTime.setCineplex(ChosenCineplex);
+						//ChosenShowTime.setCinema(ChosenCinema) ;
+					}
+					if(select == 2){
+						System.out.println("Please input the new date: ");
+						Date chosenDate2 = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+						ChosenShowTime.setDate(chosenDate2);	
+					}						
 				break;
 				
 			case 6: //remove a showtime of a movie
-				break;
+					System.out.println("Which showtime would you like to remove?");
+					for(int index=0; index<ShownMovies.size(); index++){
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
+					}
+					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
+					ShowTimes.removeShowTimes(ChosenShowTime);
+					break;
 				
 			case 7: //configure system settings: ticket price, holidays, etc.
 					System.out.println("What would you like to configure?");

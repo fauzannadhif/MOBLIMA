@@ -21,4 +21,9 @@ public class ShowTimeList {
         this.showTimes.remove(this.showTimes.size()-1);
     }
 
+    public void removeShowTimes(ShowTime removedShowTime){
+		showTimes.set(showTimes.indexOf(removedShowTime), showTimes.get(showTimes.size()-1));
+		showTimes.remove(showTimes.size()-1);
+	}
+
 }
