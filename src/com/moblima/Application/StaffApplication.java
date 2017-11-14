@@ -35,7 +35,7 @@ public class StaffApplication {
 		String MovieName;
 		ShowTimeList ShowTimes = new ShowTimeList();
 		ShowTime ChosenShowTime;
-		CineplexList Cineplexes = new CineplexList();
+		CineplexList Cineplexes = CineplexList.getInstance();
 		Cineplex ChosenCineplex;
 		Cinema ChosenCinema;
 		GregorianCalendar ChosenDate;
