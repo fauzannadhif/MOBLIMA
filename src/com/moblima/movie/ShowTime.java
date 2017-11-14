@@ -7,6 +7,7 @@ public class ShowTime{
     private Cinema cinema;
     private Date date;
     private Cineplex cineplex;
+    private Seat Seats;
 
     public ShowTime(Movie MovieShown,Cinema cinema,Date date,Cineplex cineplex){
         this.MovieShown = MovieShown;
@@ -26,6 +27,9 @@ public class ShowTime{
     }
     public Date getDate() {
         return date;
+    }
+    public Seat getSeat() {
+        return Seats;
     }
     public void setCinema(Cinema cinema) {
         this.cinema = cinema;
