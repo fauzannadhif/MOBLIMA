@@ -8,11 +8,9 @@ import java.util.ArrayList;
 
 public final class UserManager{
     private static final UserManager INSTANCE = new UserManager();
+    
     public UserManager(){}
     
-    /**
-     * @return the instance
-     */
     public static UserManager getInstance() {
         return INSTANCE;
     }
@@ -35,18 +33,44 @@ public final class UserManager{
         return result;
     }
     
-    public ArrayList<String> detailMovie(MovieList movies){
+    public ArrayList<String> detailMovie(Movie movie){
         ArrayList<String> details= new ArrayList<String>();
-        for (int i=0; i<movies.getMovie().size(); i++) {
-				details.add(movies.getMovie().get(i).getTitle());
-                details.add(movies.getMovie().get(i).getStatus());
-                details.add(movies.getMovie().get(i).getSynopsis());
-                details.add(movies.getMovie().get(i).getDirector());
-                details.add(movies.getMovie().get(i).getCast().toString());
-                details.add(movies.getMovie().get(i).getOverallRating().toString());
-                details.add(movies.getMovie().get(i).getReview().toString());
-		}
+		details.add(movie.getTitle());
+        details.add(movie.getStatus());
+        details.add(movie.getSynopsis());
+        details.add(movie.getDirector());
+        details.add(movie.getCast().toString());
+        details.add(movie.getOverallRating().toString());
+        details.add(movie.getReview().toString());
         return details;
     }
-            
+
+    public ArrayList<String> seatStructure(ShowTime showTime){
+        ArrayList<String> seatArrayList = new ArrayList<String>();
+        seatArrayList.add("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16");
+        String[] Alphabets = {"A","B","C","D","E","F","G","H","I","J"};
+        for(int i=0;i<10; i++){
+            seatArrayList.add(Alphabets[i] + " ");
+            for (int j=0;j<9;j++){
+                if (showTime.getSeat().getSeats()[i][j])
+                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "0 ");
+                else
+                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "_ ");
+                seatArrayList.add("\n");
+            }
+            for (int j=10;j<16;j++){
+                if (showTime.getSeat().getSeats()[i][j])
+                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "0  ");
+                else
+                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "_  ");
+                seatArrayList.add("\n");
+            }
+        }
+        seatArrayList.add("                 SCREEN                 ");
+        return seatArrayList;
+    }
+    
+    public ArrayList<String> sortMovie(MovieList movies, int choice){
+        return movies.sortMovie(choice);
+    }
 }

@@ -29,7 +29,7 @@ public class Seat{
     }
 
     public void assignSeat(int row,int column){
-        if(row>10 || column>16 || row<1 || column<1){
+        if(row>9 || column>15 || row<0 || column<0){
             return;
         }
         Seats[row][column] = true;

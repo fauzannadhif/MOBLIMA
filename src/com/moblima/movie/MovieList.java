@@ -22,8 +22,9 @@ public class MovieList {
 		Movies.remove(Movies.size()-1);
 	}
 	
-	public ArrayList<Movie> sortMovie(int choice){
+	public ArrayList<String> sortMovie(int choice){
 		ArrayList<Movie> sortedMovies = Movies;
+		ArrayList<String> result = new ArrayList<String>();
 		if (choice == 1){
 			System.out.println("Sorting by ticket sales");
 			int i;
@@ -55,8 +56,12 @@ public class MovieList {
 		}
 		else {
 			System.out.println("Wrong Choice!");
+			result.add("Wrong Input");
+			return result;
 		}
-		ArrayList<Movie> result = new ArrayList<Movie>(sortedMovies.subList(0,4));
+		for(int i=0; i<4; i++){
+			result.add(i, sortedMovies.get(i).getTitle());
+		}
 		return result;		
 	}
 }
