@@ -34,10 +34,6 @@ public class StaffApplication {
 		Movie ChosenMovie;
 		String MovieName;
 		ShowTimeList ShowTimes = new ShowTimeList();
-		ArrayList<Movie> ShownMovies = new ArrayList<Movie>();
-		for(int i=0;i<ShowTimes.getShowTimes().size();i++){
-			ShownMovies.add(ShowTimes.getShowTimes().get(i).getMovieShown());
-		}
 		ShowTime ChosenShowTime;
 		
 		int choice = 0;
@@ -161,18 +157,12 @@ public class StaffApplication {
 				
 			case 4: //create new showtime for a movie
 					// Movie
-					System.out.println("Here are the movies without showtime:");
-					int count = 0;
-					ArrayList<Integer> NoShowtimeIndex = new ArrayList<Integer>();
-					for (int index=0; index<Movies.getMovie().size();index++){
-						if (! ShownMovies.contains(Movies.getMovie().get(index))){
-							count += 1;
-							NoShowtimeIndex.add(index);
-							System.out.println(count + ". " + Movies.getMovie().get(index).getTitle());
-						} //create condition for the movie not in showtime
+					System.out.println("Here is the list of movies: ");
+					for(int index=0; index<Movies.getMovie().size(); index++){
+						System.out.println((index+1)+". "+Movies.getMovie().get(index).getTitle());
 					}
 					System.out.println("Which movie would you like to add to showtime? (please input the no.)");
-					ChosenMovie = Movies.getMovie().get(NoShowtimeIndex.get(sc.nextInt()-1));
+					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
 					// Cineplex
 					System.out.println("On which cineplex?");
 					System.out.println("Cineplex List"); // TODO: CineplexList.getCineplexes();
@@ -183,13 +173,12 @@ public class StaffApplication {
 					Date chosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 					ShowTime newshowtime = new ShowTime(ChosenMovie, chosenCinema, chosenDate, chosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
-					ShownMovies.add(ChosenMovie);
 					ChosenMovie.setStatus("Now Showing");
 				break;
 				
 			case 5: //update the showtime of a movie
 					System.out.println("Which showtime would you like to update?");
-					for(int index=0; index<ShownMovies.size(); index++){
+					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
 						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
@@ -220,7 +209,7 @@ public class StaffApplication {
 				
 			case 6: //remove a showtime of a movie
 					System.out.println("Which showtime would you like to remove?");
-					for(int index=0; index<ShownMovies.size(); index++){
+					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
 						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
