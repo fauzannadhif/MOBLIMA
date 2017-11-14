@@ -3,6 +3,7 @@ package com.moblima.movie;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.IOException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
 
@@ -12,8 +13,9 @@ public final class CineplexList{
     private static final String separator = "|";
 
     private CineplexList(){
+        File file = new File("../../../../data/CineplexList.txt");
         try {
-            this.Cineplexes = readCineplex("CineplexCinema.txt");
+            this.Cineplexes = readCineplex(file);
         } catch (IOException e) {
             System.out.println("IOException > " + e.getMessage());
         }
@@ -23,8 +25,8 @@ public final class CineplexList{
         return INSTANCE;
     }
 
-    public ArrayList<Cineplex> readCineplex(String filename) throws IOException{
-        ArrayList<String> StringArray = read(filename);
+    public ArrayList<Cineplex> readCineplex(File DatabaseFile) throws IOException{
+        ArrayList<String> StringArray = read(DatabaseFile);
         ArrayList<Cineplex> cineplexList = new ArrayList<Cineplex>();
         ArrayList<Cinema> CinemaList;
         String CineplexName;
@@ -54,9 +56,9 @@ public final class CineplexList{
     }
     
     // Method to read data from text file
-    public static ArrayList<String> read(String filename) throws IOException{
+    public static ArrayList<String> read(File DatabaseFile) throws IOException{
         ArrayList<String> data = new ArrayList<String>();
-        Scanner sc = new Scanner(new FileInputStream(filename));
+        Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
         try {
             while (sc.hasNextLine()){
                 data.add(sc.nextLine());
