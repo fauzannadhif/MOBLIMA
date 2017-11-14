@@ -4,7 +4,7 @@ import java.util.Scanner;
 import com.moblima.users.Staff;
 import com.moblima.movie.*;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class StaffApplication {
 	private static Scanner sc = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class StaffApplication {
 		CineplexList Cineplexes = new CineplexList();
 		Cineplex ChosenCineplex;
 		Cinema ChosenCinema;
-		Date ChosenDate;
+		GregorianCalendar ChosenDate;
 		
 		int choice = 0;
 		
@@ -181,7 +181,7 @@ public class StaffApplication {
 					}
 					ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
 					// TODO: Change Cinema constructor
-					ChosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+					ChosenDate = new GregorianCalendar(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 					ShowTime newshowtime = new ShowTime(ChosenMovie, ChosenCinema, ChosenDate, ChosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
 					ChosenMovie.setStatus("Now Showing");
@@ -213,9 +213,9 @@ public class StaffApplication {
 					}
 					if(select == 2){
 						System.out.println("Please input the new date: ");
-						ChosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
-						ChosenShowTime.setDate(ChosenDate);	
-					}						
+						ChosenDate = new GregorianCalendar(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+						ChosenShowTime.setDate(ChosenDate);
+					}
 				break;
 				
 			case 6: //remove a showtime of a movie

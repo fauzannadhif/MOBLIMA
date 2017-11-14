@@ -18,7 +18,7 @@ public final class UserManager{
     }
 
     public String bookMovie(User user, ShowTime showtime){
-        GregorianCalendar date = new GregorianCalendar();
+        GregorianCalendar date = showtime.getDate();
         String bookingID = showtime.getCinema().getCinemaCode() + date;
         user.addBookingHistory(bookingID);
         TicketPrice ticketprice = new TicketPrice(false,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());

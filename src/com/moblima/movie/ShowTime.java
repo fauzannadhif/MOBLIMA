@@ -1,15 +1,15 @@
 package com.moblima.movie;
 
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class ShowTime{
     private Movie MovieShown;
     private Cinema cinema;
-    private Date date;
+    private GregorianCalendar date;
     private Cineplex cineplex;
     private Seat Seats;
 
-    public ShowTime(Movie MovieShown,Cinema cinema,Date date,Cineplex cineplex){
+    public ShowTime(Movie MovieShown,Cinema cinema,GregorianCalendar date,Cineplex cineplex){
         this.MovieShown = MovieShown;
         this.cinema = cinema;
         this.date = date;
@@ -25,7 +25,7 @@ public class ShowTime{
     public Cineplex getCineplex() {
         return cineplex;
     }
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
     public Seat getSeat() {
@@ -37,7 +37,7 @@ public class ShowTime{
     public void setCineplex(Cineplex cineplex) {
         this.cineplex = cineplex;
     }
-    public void setDate(Date date) {
+    public void setDate(GregorianCalendar date) {
         this.date = date;
     }
     public void setMovieShown(Movie movieShown) {
