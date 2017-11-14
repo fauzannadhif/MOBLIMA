@@ -13,10 +13,10 @@ public class UserManager{
         this.user = user;
     }
     
-    public String bookMovie(Movie movie,Date date,Cinema cinema,Cineplex cineplex){
-        this.bookingID = cinema.getCinemaCode() + "date/time"; // TODO: Do Date/Time
+    public String bookMovie(ShowTime showtime){
+        this.bookingID = showtime.getCinema().getCinemaCode() + "date/time"; // TODO: Do Date/Time
         user.addBookingHistory(bookingID);
-        TicketPrice ticketprice = new TicketPrice(false,user.getAge(),movie.getType(),cinema.getType());
+        TicketPrice ticketprice = new TicketPrice(false,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());
         Double price = ticketprice.getPrice();
         System.out.println("Your price = " + price);
         return bookingID;

@@ -2,8 +2,10 @@ package com.moblima.Application;
 
 import java.util.Scanner;
 import com.moblima.users.User;
+import com.moblima.Manager.UserManager;
 import com.moblima.movie.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class UserApplication {
 	private static Scanner sc = new Scanner(System.in);
@@ -114,7 +116,7 @@ public class UserApplication {
 				System.out.println("Here is the seat layout of the cinema: ");
 				System.out.println("");
 				System.out.println("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16");
-				String Alphabets[] = {"A","B","C","D","E","F","G","H","I","J"};
+				String[] Alphabets = {"A","B","C","D","E","F","G","H","I","J"};
 				for(int i=0;i<10; i++){
 					System.out.print(Alphabets[i]+" ");
 					for (int j=0;j<16;j++){
@@ -158,7 +160,7 @@ public class UserApplication {
 				System.out.println("Here is the seat layout of the cinema: ");
 				System.out.println("");
 				System.out.println("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16");
-				String Alphabets2[] = {"A","B","C","D","E","F","G","H","I","J"};
+				String[] Alphabets2 = {"A","B","C","D","E","F","G","H","I","J"};
 				for(int i=0;i<10; i++){
 					System.out.print(Alphabets2[i]+" ");
 					for (int j=0;j<16;j++){
@@ -170,6 +172,15 @@ public class UserApplication {
 						System.out.print("\n");
 					}
 				}
+				System.out.println("Which seat would you like to choose?");
+				System.out.println("Row (Please input the letter in capital) :");
+				String selectedrow = sc.next();
+				System.out.println("Column(Please input the number) : ");
+				Integer selectedcolumn = sc.nextInt();
+				ChosenShowTime.getSeat().assignSeat(Arrays.asList(Alphabets2).indexOf(selectedrow), selectedcolumn);
+				System.out.println("Please enter your name: ");
+				System.out.println("Please enter your email address: ");
+				System.out.println("Please enter your mobile number: ");
 				//show the time, choose time, show seat, choose seat
 				//print no of tickets, the seats chosen, total amount
 				//proceed? if yes, add to booking history. if no, go back
