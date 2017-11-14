@@ -16,10 +16,6 @@ public class ShowTimeList {
     public void addShowTimes(ShowTime newShowTime) {
         this.showTimes.add(newShowTime);
     }
-    public void setShowTimes(ShowTime UnneededShowTime) {
-        this.showTimes.set(this.showTimes.indexOf(UnneededShowTime), this.showTimes.get(this.showTimes.size()-1));
-        this.showTimes.remove(this.showTimes.size()-1);
-    }
 
     public void removeShowTimes(ShowTime removedShowTime){
 		showTimes.set(showTimes.indexOf(removedShowTime), showTimes.get(showTimes.size()-1));
