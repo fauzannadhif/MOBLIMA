@@ -1,20 +1,25 @@
 package com.moblima.Manager;
+
 import com.moblima.users.User;
 import com.moblima.movie.*;
-
-import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.ArrayList;
 
 
-public class UserManager{
-    private String bookingID;
-    private User user;
-    public UserManager(User user){
-        this.user = user;
-    }
+public final class UserManager{
+    private static final UserManager INSTANCE = new UserManager();
+    public UserManager(){}
     
-    public String bookMovie(ShowTime showtime){
-        this.bookingID = showtime.getCinema().getCinemaCode() + "date/time"; // TODO: Do Date/Time
+    /**
+     * @return the instance
+     */
+    public static UserManager getInstance() {
+        return INSTANCE;
+    }
+
+    public String bookMovie(User user, ShowTime showtime){
+        GregorianCalendar date = new GregorianCalendar();
+        String bookingID = showtime.getCinema().getCinemaCode() + date;
         user.addBookingHistory(bookingID);
         TicketPrice ticketprice = new TicketPrice(false,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());
         Double price = ticketprice.getPrice();
