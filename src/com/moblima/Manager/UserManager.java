@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public final class UserManager{
     private static final UserManager INSTANCE = new UserManager();
     
-    public UserManager(){}
+    private UserManager(){}
     
     public static UserManager getInstance() {
         return INSTANCE;
@@ -19,7 +19,7 @@ public final class UserManager{
         GregorianCalendar date = showtime.getDate();
         String bookingID = showtime.getCinema().getCinemaCode() + date;
         user.addBookingHistory(bookingID);
-        TicketPrice ticketprice = new TicketPrice(false,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());
+        TicketPrice ticketprice = new TicketPrice(date,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());
         Double price = ticketprice.getPrice();
         System.out.println("Your price = " + price);
         return bookingID;
