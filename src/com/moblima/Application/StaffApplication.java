@@ -35,6 +35,10 @@ public class StaffApplication {
 		String MovieName;
 		ShowTimeList ShowTimes = new ShowTimeList();
 		ShowTime ChosenShowTime;
+		CineplexList Cineplexes = new CineplexList();
+		Cineplex ChosenCineplex;
+		Cinema ChosenCinema;
+		Date ChosenDate;
 		
 		int choice = 0;
 		
@@ -165,13 +169,20 @@ public class StaffApplication {
 					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
 					// Cineplex
 					System.out.println("On which cineplex?");
-					System.out.println("Cineplex List"); // TODO: CineplexList.getCineplexes();
-					Cineplex chosenCineplex = new Cineplex(sc.next());
-					// TODO: CineplexList.getCineplexes().get(sc.nextInt()-1);
-					Cinema chosenCinema = new Cinema("CinemaCode", chosenCineplex.getName());
+					System.out.println("Cineplex List: ");
+					for(int n=0; n<Cineplexes.getCineplex().size(); n++){
+						System.out.println((n+1)+". "+Cineplexes.getCineplex().get(n).getName());	
+					}
+					ChosenCineplex = Cineplexes.getCineplex().get(sc.nextInt()-1);
+					System.out.println("On which cinema?");
+					System.out.println("Cinema list: ");
+					for(int m=0; m<ChosenCineplex.getCinemaList().size(); m++){
+						System.out.println((m+1)+". "+ChosenCineplex.getCinemaList().get(m));
+					}
+					ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
 					// TODO: Change Cinema constructor
-					Date chosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
-					ShowTime newshowtime = new ShowTime(ChosenMovie, chosenCinema, chosenDate, chosenCineplex);
+					ChosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+					ShowTime newshowtime = new ShowTime(ChosenMovie, ChosenCinema, ChosenDate, ChosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
 					ChosenMovie.setStatus("Now Showing");
 				break;
@@ -188,22 +199,22 @@ public class StaffApplication {
 					int select = sc.nextInt();
 					if(select == 1){
 						System.out.println("Select the new Cineplex: ");
-						//for(int i=0; i<Cineplexes.getCineplex().size()); i++){
-						//	System.out.println((i+1)+". "+Cineplexes.getCineplex().get(i).getName());
-						//}
-						//ChosenCineplex = Cineplexes.getCineplex().get(sc.nextInt()-1);
-						//System.out.println("Select the new Cinema");
-						//for(int j=0; j<ChosenCineplex.getCinemaList().size()){}
-						//	System.out.println((j+1)+". "+ChosenCineplex.getCinemaList().get(j).getName());
-						//}
-						//ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
-						//ChosenShowTime.setCineplex(ChosenCineplex);
-						//ChosenShowTime.setCinema(ChosenCinema) ;
+						for(int x=0; x<Cineplexes.getCineplex().size(); x++){
+							System.out.println((x+1)+". "+Cineplexes.getCineplex().get(x).getName());
+						}
+						ChosenCineplex = Cineplexes.getCineplex().get(sc.nextInt()-1);
+						System.out.println("Select the new Cinema");
+						for(int y=0; y<ChosenCineplex.getCinemaList().size(); y++){
+							System.out.println((y+1)+". "+ChosenCineplex.getCinemaList().get(y));
+						}
+						ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
+						ChosenShowTime.setCineplex(ChosenCineplex);
+						ChosenShowTime.setCinema(ChosenCinema) ;
 					}
 					if(select == 2){
 						System.out.println("Please input the new date: ");
-						Date chosenDate2 = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
-						ChosenShowTime.setDate(chosenDate2);	
+						ChosenDate = new Date(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+						ChosenShowTime.setDate(ChosenDate);	
 					}						
 				break;
 				
