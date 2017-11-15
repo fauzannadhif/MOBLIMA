@@ -109,3 +109,113 @@ Flatliners | Blitz Megaplex | HJA | 2017;11;18;22;40;00
 Flatliners | Blitz Megaplex | HJA | 2017;11;19;01;00;00
 Flatliners | Blitz Megaplex | HJA | 2017;11;19;18;00;00
 Flatliners | Blitz Megaplex | HJA | 2017;11;19;20;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;15;11;10;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;15;13;45;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;15;16;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;15;18;55;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;15;21;30;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;16;11;10;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;16;13;45;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;16;16;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;16;18;55;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;16;21;30;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;17;11;10;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;17;13;45;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;17;16;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;17;18;55;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;17;21;30;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;18;11;10;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;18;13;45;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;18;16;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;18;18;55;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;18;21;30;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;00;05;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;11;10;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;13;45;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;16;20;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;18;55;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | AHU | 2017;11;19;21;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;15;11;35;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;15;13;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;15;15;25;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;16;11;35;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;16;13;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;16;15;25;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;17;11;35;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;17;13;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;17;15;25;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;18;11;35;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;18;13;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;18;15;25;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;19;11;35;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;19;13;30;00
+The Nut Job 2: Nutty By Nature | Film Garde Cineplex | KGU | 2017;11;19;15;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;15;17;20;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;15;19;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;15;21;30;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;16;17;20;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;16;19;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;16;21;30;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;17;17;20;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;17;19;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;17;21;30;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;18;17;20;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;18;19;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;18;21;30;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;18;23;35;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;19;17;20;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;19;19;25;00
+Happy Death Day | Film Garde Cineplex | KGU | 2017;11;19;21;30;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;15;11;20;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;15;13;40;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;15;16;00;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;16;11;20;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;16;13;40;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;16;16;00;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;17;11;20;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;17;13;40;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;17;16;00;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;18;11;20;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;18;13;40;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;18;16;00;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;19;11;20;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;19;13;40;00
+Flatliners | Film Garde Cineplex | HIJ | 2017;11;19;16;00;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;15;18;20;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;15;20;40;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;16;18;20;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;16;20;40;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;17;18;20;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;17;20;40;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;18;18;20;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;18;20;40;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;18;23;00;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;19;18;20;00
+Geostorm | Film Garde Cineplex | HIJ | 2017;11;19;20;40;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;15;11;25;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;15;14;00;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;15;16;35;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;16;11;25;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;16;14;00;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;16;16;35;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;17;11;25;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;17;14;00;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;17;16;35;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;18;11;25;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;18;14;00;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;18;16;35;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;19;11;25;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;19;14;00;00
+Marvel's Thor: Ragnarok | Film Garde Cineplex | GJA | 2017;11;19;16;35;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;15;19;10;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;15;21;00;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;16;19;10;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;16;21;00;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;17;19;10;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;17;21;00;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;18;19;10;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;18;21;00;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;18;22;50;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;19;00;40;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;19;19;10;00
+Jigsaw | Film Garde Cineplex | GJA | 2017;11;19;21;00;00
