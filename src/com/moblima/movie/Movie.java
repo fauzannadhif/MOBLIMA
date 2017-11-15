@@ -18,13 +18,15 @@ public class Movie {
 	private String AgeRating;
 	private int TicketSales;
 	
-	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,String AgeRating){
+	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,ArrayList<Integer> Rating, ArrayList<String> Review, String AgeRating){
 		this.Title = Title;
 		this.Status = Status;
 		this.Synopsis = Synopsis;
 		this.Director = Director;
 		this.Type = Type;
 		this.Cast = Cast;
+		this.Rating = Rating;
+		this.Review = Review;
 		this.AgeRating = AgeRating;
 	}
 	
