@@ -1,1 +1,111 @@
-Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;15;15;5;30
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;15;11;15;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;15;13;00;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;15;14;45;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;15;16;30;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;16;11;15;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;16;13;00;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;16;14;45;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;16;16;30;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;17;11;15;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;17;13;00;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;17;14;45;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;17;16;30;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;18;11;15;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;18;13;00;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;18;14;45;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;18;16;30;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;19;11;15;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;19;13;00;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;19;14;45;00
+Kimi no Nawa | Cathay Cineplex | CCX | 2017;11;19;16;30;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;15;18;15;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;15;20;50;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;16;18;15;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;16;20;50;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;17;18;15;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;17;20;50;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;18;18;15;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;18;20;50;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;18;23;25;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;19;18;15;00
+Marvel's Thor: Ragnarok | Cathay Cineplex | CCX | 2017;11;19;20;50;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;15;12;00;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;15;14;20;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;15;16;40;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;16;12;00;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;16;14;20;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;16;16;40;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;17;12;00;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;17;14;20;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;17;16;40;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;18;12;00;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;18;14;20;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;18;16;40;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;19;12;00;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;19;14;20;00
+Geostorm | Cathay Cineplex | CHD | 2017;11;19;16;40;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;15;19;00;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;15;20;50;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;16;19;00;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;16;20;50;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;17;19;00;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;17;20;50;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;18;19;00;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;18;20;50;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;18;22;40;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;19;00;30;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;19;19;00;00
+Jigsaw | Cathay Cineplex | CHD | 2017;11;19;20;50;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;15;12;30;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;15;14;25;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;15;16;20;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;16;12;30;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;16;14;25;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;16;16;20;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;17;12;30;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;17;14;25;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;17;16;20;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;18;12;30;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;18;14;25;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;18;16;20;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;19;12;30;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;19;14;25;00
+The Nut Job 2: Nutty By Nature | Blitz Megaplex | BMW | 2017;11;19;16;20;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;15;18;15;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;15;20;50;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;16;18;15;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;16;20;50;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;17;18;15;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;17;20;50;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;18;18;15;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;18;20;50;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;18;23;25;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;19;18;15;00
+Marvel's Thor: Ragnarok | Blitz Megaplex | BMW | 2017;11;19;20;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;15;11;45;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;15;13;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;15;15;55;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;16;11;45;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;16;13;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;16;15;55;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;17;11;45;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;17;13;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;17;15;55;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;18;11;45;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;18;13;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;18;15;55;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;19;11;45;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;19;13;50;00
+Happy Death Day | Blitz Megaplex | HJA | 2017;11;19;15;55;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;15;18;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;15;20;20;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;16;18;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;16;20;20;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;17;18;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;17;20;20;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;18;18;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;18;20;20;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;18;22;40;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;19;01;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;19;18;00;00
+Flatliners | Blitz Megaplex | HJA | 2017;11;19;20;20;00
