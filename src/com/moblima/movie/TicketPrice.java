@@ -4,20 +4,21 @@ import java.util.GregorianCalendar;
 import java.util.ArrayList;
 
 public class TicketPrice {
-	private GregorianCalendar Date;
+	private GregorianCalendar DateShown;
 	private static ArrayList<GregorianCalendar> HolidayDate;
 	private int Age;
 	private String MovieType;
 	private String CinemaClass;
 	private Double Price;
 	private static Double[] Modifier={4.0,2.0,2.0,2.0,2.0,2.0,2.0};
-	public TicketPrice(GregorianCalendar Date,int Age,String MovieType,String CinemaClass){
-		this.Date=Date;
+	public TicketPrice(GregorianCalendar DateShown,int Age,String MovieType,String CinemaClass){
+		this.DateShown=DateShown;
 		this.Age=Age;
 		this.MovieType=MovieType;
 		this.CinemaClass=CinemaClass;
 		this.Price=Modifier[0];
-		if (HolidayDate.contains(Date))
+		GregorianCalendar DateComparator = new GregorianCalendar(this.DateShown.YEAR, this.DateShown.DAY_OF_MONTH, this.DateShown.YEAR);
+		if (HolidayDate.contains(DateComparator))
 			Price+=Modifier[1];
 		if (Age<6)
 			Price -= Modifier[2];
@@ -64,11 +65,11 @@ public class TicketPrice {
 	public static Double[] getModifier() {
 		return TicketPrice.Modifier;
 	}
-	public void setDate(GregorianCalendar Date) {
-		this.Date = Date;
+	public void setDate(GregorianCalendar DateShown) {
+		this.DateShown = DateShown;
 	}
 	public GregorianCalendar getDate() {
-		return this.Date;
+		return this.DateShown;
 	}
 	public static void setHolidayDate(ArrayList<GregorianCalendar> HolidayDate) {
 		TicketPrice.HolidayDate = HolidayDate;
@@ -78,6 +79,9 @@ public class TicketPrice {
 	}
 	public static void addHolidayDate(GregorianCalendar addedHolidayDate){
 		TicketPrice.HolidayDate.add(addedHolidayDate);
+	}
+	public static void removeHolidayDate(GregorianCalendar removedHolidayDate){
+		TicketPrice.HolidayDate.remove(removedHolidayDate);
 	}
 	
 }

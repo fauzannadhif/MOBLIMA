@@ -181,7 +181,6 @@ public class StaffApplication {
 						System.out.println((m+1)+". "+ChosenCineplex.getCinemaList().get(m));
 					}
 					ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
-					// TODO: Change Cinema constructor
 					ChosenDate = new GregorianCalendar(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
 					ShowTime newshowtime = new ShowTime(ChosenMovie, ChosenCinema, ChosenDate, ChosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
@@ -231,8 +230,7 @@ public class StaffApplication {
 			case 7: //configure system settings: ticket price, holidays, etc.
 					System.out.println("What would you like to configure?");
 					System.out.println("1. Ticket Price");
-					System.out.println("1. Ticket Price");
-					System.out.println("1. Ticket Price");
+					System.out.println("2. Configure Holiday Dates");
 					int pick = sc.nextInt();
 					if(pick==1){
 						System.out.println("What would you like to change?");
@@ -278,6 +276,33 @@ public class StaffApplication {
 							System.out.println("The old additional price for blockbuster movie is: " + TicketPrice.getModifier()[6]);
 							System.out.println("Please input your new additional price: ");
 							TicketPrice.getModifier()[6] = sc.nextDouble();
+						}
+					}
+
+					if(pick==2){
+						System.out.println("Here is the list of holidays: ");
+						for(int indexholiday=0;indexholiday<TicketPrice.getHolidayDate().size();indexholiday++){
+							System.out.println((indexholiday+1)+". "+TicketPrice.getHolidayDate().get(indexholiday));
+						}
+						System.out.println("What would you like to do?");
+						System.out.println("1. Add a holiday date");
+						System.out.println("2. Remove a holiday date");
+						int choose = sc.nextInt();
+						if(choose == 1){
+							System.out.println("Please enter the date in numbers");
+							System.out.println("Year: ");
+							int yearchosen = sc.nextInt();
+							System.out.println("Month: ");
+							int monthchosen = sc.nextInt(); 
+							System.out.println("Day: ");
+							int daychosen = sc.nextInt();
+							GregorianCalendar chosendate = new GregorianCalendar(yearchosen, monthchosen, daychosen);
+							TicketPrice.addHolidayDate(chosendate);
+						}
+						if(choose == 2){
+							System.out.println("Which date would you like to remove(please input the no.)");
+							GregorianCalendar removeddate = TicketPrice.getHolidayDate().get(sc.nextInt()-1);
+							TicketPrice.removeHolidayDate(removeddate);
 						}
 					}
 				break;
