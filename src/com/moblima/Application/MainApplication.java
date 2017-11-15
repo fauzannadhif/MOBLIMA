@@ -7,7 +7,7 @@ public class MainApplication {
 	
 	private static Scanner sc = new Scanner(System.in);
 	
-	public static void main(){
+	public static void main(String[] args){
 		
 		System.out.println("Are you a user or a staff? (1 for user, 2 for staff)");
 		int value;
