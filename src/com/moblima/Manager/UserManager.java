@@ -45,26 +45,29 @@ public final class UserManager{
 
     public ArrayList<String> seatStructure(ShowTime showTime){
         ArrayList<String> seatArrayList = new ArrayList<String>();
-        seatArrayList.add("  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16");
+        seatArrayList.add("  01 02 03 04 05 06 07 08    09 10 11 12 13 14 15 16");
         String[] Alphabets = {"A","B","C","D","E","F","G","H","I","J"};
         for(int i=0;i<10; i++){
-            seatArrayList.add(Alphabets[i] + " ");
-            for (int j=0;j<9;j++){
+            seatArrayList.add(Alphabets[i] + "  ");
+            for (int j=0;j<7;j++){
                 if (showTime.getSeat().getSeats()[i][j])
-                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "0 ");
+                    seatArrayList.set(i+1, seatArrayList.get(i+1) + "0  ");
                 else
-                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "_ ");
-                seatArrayList.add("\n");
+                    seatArrayList.set(i+1, seatArrayList.get(i+1) + "_  ");
             }
-            for (int j=10;j<16;j++){
+            if (showTime.getSeat().getSeats()[i][7])
+                seatArrayList.set(i+1, seatArrayList.get(i+1) + "0     ");
+            else
+                seatArrayList.set(i+1, seatArrayList.get(i+1) + "_     ");
+            for (int j=8;j<16;j++){
                 if (showTime.getSeat().getSeats()[i][j])
-                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "0  ");
+                    seatArrayList.set(i+1, seatArrayList.get(i+1) + "0  ");
                 else
-                    seatArrayList.set(2*i, seatArrayList.get(i+1) + "_  ");
-                seatArrayList.add("\n");
+                    seatArrayList.set(i+1, seatArrayList.get(i+1) + "_  ");
             }
-        }
-        seatArrayList.add("                 SCREEN                 ");
+        }  
+        seatArrayList.add("  ----------------------SCREEN-----------------------");   
+        seatArrayList.add("\n\n");
         return seatArrayList;
     }
     

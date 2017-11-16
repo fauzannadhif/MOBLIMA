@@ -14,6 +14,7 @@ public class ShowTime{
         this.cinema = cinema;
         this.date = date;
         this.cineplex = cineplex;
+        this.Seats = new Seat();
     }
 
     public Movie getMovieShown() {
