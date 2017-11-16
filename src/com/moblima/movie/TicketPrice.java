@@ -15,14 +15,14 @@ public class TicketPrice {
 	private Double[] Modifier;
 	public TicketPrice(){
 		try {
-			File DatabaseFile = new File("../../../../data/Modifiers.txt");
+			File DatabaseFile = new File("data\\Modifiers.txt");
             this.Modifier = readModifiers(DatabaseFile);
 		} catch (Exception e) {
 			System.out.println("IOException > " + e.getMessage());
 		}
 
 		try {
-			File DatabaseFile = new File("../../../../data/HolidayDate.txt");
+			File DatabaseFile = new File("data\\HolidayDate.txt");
 			this.HolidayDate = readHolidayDates(DatabaseFile);
 		} catch (Exception e) {
 			System.out.println("IOException > " + e.getMessage());

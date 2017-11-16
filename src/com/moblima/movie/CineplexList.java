@@ -13,7 +13,7 @@ public final class CineplexList{
     private static final String separator = "|";
 
     private CineplexList(){
-        File file = new File("../../../../data/CineplexList.txt");
+        File file = new File("data\\CineplexList.txt");
         try {
             this.Cineplexes = readCineplex(file);
         } catch (IOException e) {

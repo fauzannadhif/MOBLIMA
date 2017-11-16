@@ -14,7 +14,7 @@ public class MovieList {
 	private static String separator2 = ";";
 	public MovieList(){
 		try {
-			File DatabaseFile = new File("../../../../data/MovieList.txt");
+			File DatabaseFile = new File("data\\MovieList.txt");
 			this.Movies = readMovies(DatabaseFile);
 		} catch (IOException e) {
 			System.out.println("IOException > " + e.getMessage());

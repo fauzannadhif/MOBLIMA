@@ -14,7 +14,7 @@ public class ShowTimeList {
     private static String separator2 = ";";
     public ShowTimeList(){
         try {
-            File DatabaseFile = new File("../../../../data/ShowTimeList.txt");
+            File DatabaseFile = new File("data\\ShowTimeList.txt");
             this.showTimes = readShowTimes(DatabaseFile);
         } catch (IOException e) {
             System.out.println("IOException > " + e.getMessage());

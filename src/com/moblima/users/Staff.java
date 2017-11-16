@@ -30,7 +30,7 @@ public class Staff{
     private static String separator1 = "|";
     public static Boolean checkvalidity(String username, String password){
         try {
-            File DatabaseFile = new File("../../../../data/UsernamePassword.txt");
+            File DatabaseFile = new File("data\\UsernamePassword.txt");
             ArrayList<String> StringArray = read(DatabaseFile);
             for(int i=0; i<StringArray.size();i++){
                 String st = StringArray.get(i);
