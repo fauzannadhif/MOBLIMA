@@ -148,7 +148,7 @@ public class UserApplication {
 				System.out.println("Which seat would you like to choose?");
 				System.out.println("Row (Please input the letter in capital) :");
 				Integer selectedrow = (int) Character.toUpperCase(sc.next().charAt(0)) -64;
-				System.out.println("Column(Please input the number) : ");
+				System.out.println("Column (Please input the number) : ");
 				Integer selectedcolumn = sc.nextInt();
 				if (selectedcolumn>16 || selectedrow>10 || selectedcolumn<1 || selectedrow<1){
 					System.out.println("Wrong Input");
@@ -159,7 +159,6 @@ public class UserApplication {
 				System.out.println("Please enter your email address: ");
 				System.out.println("Please enter your mobile number: ");
 				//The Process should be on UserManager
-				//show the time, choose time, show seat, choose seat
 				//print no of tickets, the seats chosen, total amount
 				//proceed? if yes, add to booking history. if no, go back
 				
