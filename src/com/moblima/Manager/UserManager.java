@@ -2,10 +2,15 @@ package com.moblima.Manager;
 
 import com.moblima.users.User;
 import com.moblima.movie.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
 public final class UserManager{
+    private ServerInterface DBInterface = ServerInterface.getINSTANCE();
     private static final UserManager INSTANCE = new UserManager();
     private UserManager(){}
     
@@ -13,15 +18,31 @@ public final class UserManager{
         return INSTANCE;
     }
 
-    public String bookMovie(User user, ShowTime showtime){
-        String bookingID = showtime.getCinema().getCinemaCode() + showtime.getDate().toString();
+    public String bookMovie(User user, ShowTime showtime, int SeatRow, int SeatColumn){
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmm");
+        String bookingID = showtime.getCinema().getCinemaCode() + showtime.getDate().toString() + fmt.format(showtime.getDate().getTime());
+        showtime.getSeat().assignSeat(SeatRow, SeatColumn);
         user.addBookingHistory(bookingID);
-        TicketPrice ticketprice = new TicketPrice();
-        Double price = ticketprice.getPrice(showtime.getDate(), user.getAge(), showtime.getCinema().getType(),showtime.getMovieShown().getType());
-        System.out.println("Your price = " + price);
+        BookMovieToDB(user.getName(), showtime);
         return bookingID;
     }
-    
+    public Double CheckPrice(User user, ShowTime showtime){
+        TicketPrice ticketprice = new TicketPrice();
+        Double price = ticketprice.getPrice(showtime.getDate(), user.getAge(), showtime.getCinema().getType(),showtime.getMovieShown().getType());
+        return price;
+    }
+
+    public void BookMovieToDB(String UserName, ShowTime newShowTime){
+        File DatabaseFile = new File("data\\BookingHistory.txt");
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+        String LineData = UserName + " | " + newShowTime.getMovieShown().getTitle()+" | "+newShowTime.getCineplex().getName()+" | "+newShowTime.getCinema().getCinemaCode()+" | "+fmt.format(newShowTime.getDate().getTime());
+        try {
+            DBInterface.NewLine(DatabaseFile, LineData);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
     public ArrayList<String> listMovie(MovieList movies){
         ArrayList<String> result=new ArrayList<String>();
         for (int i=0; i<movies.getMovie().size(); i++) {

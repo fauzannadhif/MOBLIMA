@@ -1,6 +1,8 @@
 package com.moblima.Application;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
 import com.moblima.users.User;
 import com.moblima.Manager.UserManager;
 import com.moblima.movie.*;
@@ -181,13 +183,33 @@ public class UserApplication {
 					System.out.println("Wrong Input");
 					break;
 				}
-				ChosenShowTime.getSeat().assignSeat(selectedrow-1, selectedcolumn-1);
-				System.out.println("Please enter your name: ");
 				System.out.println("Please enter your email address: ");
+				String email = sc.next();
 				System.out.println("Please enter your mobile number: ");
-				//The Process should be on UserManager
-				//print no of tickets, the seats chosen, total amount
-				//proceed? if yes, add to booking history. if no, go back
+				String PhoneNumber = sc.next();
+				System.out.println("Ok, We have received your request");
+				try {
+					TimeUnit.SECONDS.sleep(2);
+				} catch (InterruptedException e) {
+					System.out.println("Seems you have interrupt the wating time");
+				}
+				Double price = usermgr.CheckPrice(user, ChosenShowTime);
+
+				System.out.println("Here are the details of the bookings: ");
+				System.out.println("Name = " + name);
+				System.out.println("Email = " + email);
+				System.out.println("Phone Number = " + PhoneNumber);
+				System.out.println("Movie = " + ChosenShowTime.getMovieShown().getTitle());
+				System.out.println("Cineplex = " + ChosenShowTime.getCineplex().getName());
+				System.out.println("Cinema = " + ChosenShowTime.getCinema().getCinemaCode());
+				System.out.println("Time = " + fmt.format(ChosenShowTime.getDate().getTime()));
+				System.out.printf("Seat: row %c and column %d\n", (char) (int) (selectedrow+64), selectedcolumn);
+				System.out.printf("Price = %.1f", price);
+				System.out.println("Are you sure to Proceed?  [Input cancel to cancel everything]");
+				String Confirmation = sc.next();
+				if (Confirmation.equals("cancel")) break;
+				String bookID = usermgr.bookMovie(user, ChosenShowTime, selectedrow-1, selectedcolumn-1);
+				System.out.println("Booking Success!\n\nYour Booking ID is "+ bookID);
 				
 				break;
 				
@@ -198,7 +220,6 @@ public class UserApplication {
 				for (int i=0; i<bookingHistory.size(); i++){
 					System.out.println((i+1) + ". " + bookingHistory.get(i));
 				}
-				System.out.println(user.getBookingHistory());
 				break;
 				
 			case 7: 
