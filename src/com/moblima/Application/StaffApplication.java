@@ -41,11 +41,13 @@ public class StaffApplication {
 		Cinema ChosenCinema;
 		GregorianCalendar ChosenDate;
 		TicketPrice TicketPrices = new TicketPrice();
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss");
 		
 		int choice = 0;
 		
 		while (choice != 8) {
+			System.out.println("Press Enter to continue");
+
 			System.out.println("1. Create movie listing");
 			System.out.println("2. Update movie listing");
 			System.out.println("3. Remove movie listing");
@@ -235,7 +237,19 @@ public class StaffApplication {
 					}
 					if(select == 2){
 						System.out.println("Please input the new date: ");
-						ChosenDate = new GregorianCalendar(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+						System.out.println("Year: ");
+						int ye2=sc.nextInt();
+						System.out.println("Month: ");
+						int mo2=sc.nextInt();
+						System.out.println("Day: ");
+						int da2=sc.nextInt();
+						System.out.println("Hour: ");
+						int ho2=sc.nextInt();
+						System.out.println("Minute: ");
+						int mi2=sc.nextInt();
+						System.out.println("Second: ");
+						int se2=sc.nextInt();
+						ChosenDate = new GregorianCalendar(ye2, mo2, da2, ho2, mi2, se2);
 						ChosenShowTime.setDate(ChosenDate);
 					}
 				break;
