@@ -15,11 +15,15 @@ public class StaffApplication {
 	
 	public static void main() {
 		
-		System.out.println("Please login to continue");
-		
+		System.out.println("Please login to continue [Input 0 to exit]");
+		boolean exit = false;
 		while (true) {
 			System.out.println("Username: ");
 			String username = sc.next();
+			if (username.equals("0")){
+				exit = true;
+				break;
+			}
 			System.out.println("Password: ");
 			String pass = sc.next();
 			
@@ -30,7 +34,7 @@ public class StaffApplication {
 			else
 				System.out.println("Invalid username or password. Please try again.");
 		}
-
+		if (exit) return;
 		MovieList Movies = new MovieList(); 
 		CineplexList Cineplexes = CineplexList.getInstance();
 		ShowTimeList ShowTimes = new ShowTimeList();

@@ -3,15 +3,18 @@ package com.moblima.movie;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-import java.io.FileInputStream;
 import java.util.StringTokenizer;
+
+import com.moblima.Manager.ServerInterface;
+
 import java.lang.String;
 
 public class MovieList {
 	private ArrayList<Movie> Movies;
 	private static String separator1 = "|";
 	private static String separator2 = ";";
+	private ServerInterface DBInterface = ServerInterface.getINSTANCE();
+
 	public MovieList(){
 		try {
 			File DatabaseFile = new File("data\\MovieList.txt");
@@ -24,7 +27,7 @@ public class MovieList {
 
 	public ArrayList<Movie> readMovies(File DatabaseFile) throws IOException{
 		ArrayList<Movie> movies = new ArrayList<Movie>();
-		ArrayList<String> StringArray = read(DatabaseFile);
+		ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);
 		Movie movie;
 		for (int i=0; i<StringArray.size(); i++){
 			String st = StringArray.get(i);
@@ -68,21 +71,6 @@ public class MovieList {
 		}
 
 		return movies;
-	}
-
-	// Method to read data from text file
-	public static ArrayList<String> read(File DatabaseFile) throws IOException{
-        	ArrayList<String> data = new ArrayList<String>();
-        	Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
-        	try {
-        	    while (sc.hasNextLine()){
-        	        data.add(sc.nextLine());
-        	    }
-        	}
-        	finally {
-        	    sc.close();
-        	}
-        	return data;
 	}
 
 	public void addMovie(Movie newMovie){

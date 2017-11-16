@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.io.File;
 import java.io.IOException;
-import java.io.FileInputStream;
 import java.util.StringTokenizer;
-import java.util.Scanner;
+import com.moblima.Manager.ServerInterface;
 
 public class ShowTimeList {
     private ArrayList<ShowTime> showTimes;
     private static String separator1 = "|";
     private static String separator2 = ";";
+    private ServerInterface DBInterface = ServerInterface.getINSTANCE();
+    
     public ShowTimeList(){
         try {
             File DatabaseFile = new File("data\\ShowTimeList.txt");
@@ -21,7 +22,7 @@ public class ShowTimeList {
         }
         try {
             File DatabaseFile = new File("data\\Seat.txt");
-            ArrayList<String> StringArray = read(DatabaseFile);
+            ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);
             for (int i=0; i<StringArray.size(); i++){
                 String st = StringArray.get(i);
                 for(int a=0; a<10; a++){
@@ -33,8 +34,8 @@ public class ShowTimeList {
                     }
                 }
             }
-        } catch (Exception e) {
-            //TODO: handle exception
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
         }
         
     }
@@ -53,7 +54,7 @@ public class ShowTimeList {
     
     public ArrayList<ShowTime> readShowTimes(File DatabaseFile) throws IOException{
 		ArrayList<ShowTime> showtimes = new ArrayList<ShowTime>();
-		ArrayList<String> StringArray = read(DatabaseFile);
+		ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);
         ShowTime showtime = null;
         MovieList movies = new MovieList();
         CineplexList cineplexes = CineplexList.getInstance();
@@ -97,22 +98,6 @@ public class ShowTimeList {
             }
 			showtimes.add(showtime);
 		}
-
 		return showtimes;
     }
-    
-    public static ArrayList<String> read(File DatabaseFile) throws IOException{
-        ArrayList<String> data = new ArrayList<String>();
-        Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
-        try {
-            while (sc.hasNextLine()){
-                data.add(sc.nextLine());
-            }
-        }
-        finally {
-            sc.close();
-        }
-        return data;
-	}
-
 }

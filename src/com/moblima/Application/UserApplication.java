@@ -21,7 +21,7 @@ public class UserApplication {
 		System.out.println("Age: ");
 		int age = sc.nextInt();
 		
-		user = new User(name);
+		user = new User(name, age);
 		user.setAge(age);
 		MovieList Movies = new MovieList();
 		ShowTimeList ShowTimes = new ShowTimeList();
@@ -194,6 +194,10 @@ public class UserApplication {
 			case 6: //list all movies booked, show: transaction id, movie, cinema, cineplex, date/time, tickets, seats, total amount
 				//TODO: Change booking history into showtime type, move to usermanager
 				System.out.println("\n----------------\n");
+				ArrayList<String> bookingHistory = user.getBookingHistory();
+				for (int i=0; i<bookingHistory.size(); i++){
+					System.out.println((i+1) + ". " + bookingHistory.get(i));
+				}
 				System.out.println(user.getBookingHistory());
 				break;
 				

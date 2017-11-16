@@ -3,13 +3,14 @@ package com.moblima.users;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
-import java.io.FileInputStream;
 import java.util.StringTokenizer;
-import java.util.Scanner;
+import com.moblima.Manager.ServerInterface;
 
 public class Staff{
     private String Username;
     private String Password;
+    private static ServerInterface DBInterface = ServerInterface.getINSTANCE();
+
     public Staff(String username, String password){
         this.Username = username;
         this.Password = password;
@@ -31,7 +32,7 @@ public class Staff{
     public static Boolean checkvalidity(String username, String password){
         try {
             File DatabaseFile = new File("data\\UsernamePassword.txt");
-            ArrayList<String> StringArray = read(DatabaseFile);
+            ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);
             for(int i=0; i<StringArray.size();i++){
                 String st = StringArray.get(i);
                 StringTokenizer star = new StringTokenizer(st, separator1);
@@ -44,22 +45,9 @@ public class Staff{
             System.out.println("The username and password combination you entered is not correct!");
             return false;
             } 
-        catch (Exception e) {
+        catch (IOException e) {
             System.out.println("IOException > " + e.getMessage());
             return false;
         }
     }
-    public static ArrayList<String> read(File DatabaseFile) throws IOException{
-        ArrayList<String> data = new ArrayList<String>();
-        Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
-        try {
-            while (sc.hasNextLine()){
-                data.add(sc.nextLine());
-            }
-        }
-        finally {
-            sc.close();
-        }
-        return data;
-	}
 }
