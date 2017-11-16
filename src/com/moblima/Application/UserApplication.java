@@ -4,6 +4,8 @@ import java.util.Scanner;
 import com.moblima.users.User;
 import com.moblima.Manager.UserManager;
 import com.moblima.movie.*;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class UserApplication {
@@ -28,6 +30,7 @@ public class UserApplication {
 		ArrayList<String> MovieTitles;
 		ArrayList<String> MovieDetails;
 		ArrayList<String> seatStructure;
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss");
 		
 
 		int choice = 0;
@@ -115,9 +118,10 @@ public class UserApplication {
 				usedindex.clear();
 				for (int i=0; i<ShowTimes.getShowTimes().size(); i++){
 					if(ShowTimes.getShowTimes().get(i).getMovieShown().getTitle().equals(ChosenMovie.getTitle())){
+						fmt.setCalendar(ShowTimes.getShowTimes().get(i).getDate());
 						count++;
 						usedindex.add(i);
-						System.out.println(count+". "+ShowTimes.getShowTimes().get(i).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(i).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(i).getDate().toString());
+						System.out.println(count+". "+ShowTimes.getShowTimes().get(i).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(i).getCinema().getCinemaCode()+", "+fmt.format(ShowTimes.getShowTimes().get(i).getDate().getTime()));
 					}
 				}
 				System.out.println("\n----------------\n");
@@ -152,9 +156,10 @@ public class UserApplication {
 				usedindex2.clear();
 				for (int i=0; i<ShowTimes.getShowTimes().size(); i++){
 					if(ShowTimes.getShowTimes().get(i).getMovieShown().getTitle().equals(ChosenMovie.getTitle())){
+						fmt.setCalendar(ShowTimes.getShowTimes().get(i).getDate());
 						count2++;
 						usedindex2.add(i);
-						System.out.println((count2)+". "+ShowTimes.getShowTimes().get(i).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(i).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(i).getDate().toString());
+						System.out.println((count2)+". "+ShowTimes.getShowTimes().get(i).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(i).getCinema().getCinemaCode()+", "+fmt.format(ShowTimes.getShowTimes().get(i).getDate().getTime()));
 					}
 				}
 				System.out.println("Which time slot do you want to watch in?");
