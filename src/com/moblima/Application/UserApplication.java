@@ -47,6 +47,8 @@ public class UserApplication {
 			
 			switch(choice) {
 			case 1: //search movie
+				String inputMovie = sc.next();
+				Movies.searchMovie(inputMovie);
 				break;
 				
 			case 2: //list movie
