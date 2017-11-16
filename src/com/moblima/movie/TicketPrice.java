@@ -2,34 +2,58 @@ package com.moblima.movie;
 
 import java.util.GregorianCalendar;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.io.FileInputStream;
+import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class TicketPrice {
+	private static String separator1 = "|";
 	private GregorianCalendar DateShown;
 	private static ArrayList<GregorianCalendar> HolidayDate;
 	private int Age;
 	private String MovieType;
 	private String CinemaClass;
 	private Double Price;
-	private static Double[] Modifier={4.0,2.0,2.0,2.0,2.0,2.0,2.0};
-	public TicketPrice(GregorianCalendar DateShown,int Age,String MovieType,String CinemaClass){
-		this.DateShown=DateShown;
-		this.Age=Age;
-		this.MovieType=MovieType;
-		this.CinemaClass=CinemaClass;
-		this.Price=Modifier[0];
-		GregorianCalendar DateComparator = new GregorianCalendar(this.DateShown.YEAR, this.DateShown.DAY_OF_MONTH, this.DateShown.YEAR);
-		if (HolidayDate.contains(DateComparator))
-			Price+=Modifier[1];
-		if (Age<6)
-			Price -= Modifier[2];
-		if (Age>55)
-			Price += Modifier[3];
-		if (CinemaClass=="PREMIUM")
-			Price+= Modifier[4];
-		if (MovieType=="3D MOVIE")
-			Price+= Modifier[5];
-		if (MovieType=="Blockbuster")
-			Price+= Modifier[6];
+	private Double[] Modifier;
+	GregorianCalendar DateComparator = new GregorianCalendar(this.DateShown.YEAR, this.DateShown.DAY_OF_MONTH, this.DateShown.YEAR);
+	public TicketPrice(){
+		try {
+			File DatabaseFile = new File("../../../../data/ShowTimeList.txt");
+            this.Modifier = readModifiers(DatabaseFile);
+		} catch (Exception e) {
+			System.out.println("IOException > " + e.getMessage());
+		}
+	}
+
+	public Double[] readModifiers(File DatabaseFile) throws IOException{
+		ArrayList<String> StringArray = read(DatabaseFile);
+		String st = StringArray.get(0);
+		StringTokenizer star = new StringTokenizer(st, separator1); 
+		Double BasePrice = Double.valueOf(star.nextToken().trim());
+		Double HolidayPrice = Double.valueOf(star.nextToken().trim());
+		Double ChildrenPrice = Double.valueOf(star.nextToken().trim());
+		Double SeniorCitizenPrice = Double.valueOf(star.nextToken().trim());
+		Double PremiumCinemaPrice = Double.valueOf(star.nextToken().trim());
+		Double Price3DMovie = Double.valueOf(star.nextToken().trim());
+		Double BlockBusterMoviePrice = Double.valueOf(star.nextToken().trim());
+		Double[] modifiers = {BasePrice, HolidayPrice, ChildrenPrice, SeniorCitizenPrice, PremiumCinemaPrice, Price3DMovie, BlockBusterMoviePrice};
+		return modifiers;
+	}
+
+	public static ArrayList<String> read(File DatabaseFile) throws IOException{
+        ArrayList<String> data = new ArrayList<String>();
+        Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
+        try {
+            while (sc.hasNextLine()){
+                data.add(sc.nextLine());
+            }
+        }
+        finally {
+            sc.close();
+        }
+        return data;
 	}
 	
 	public int getAge() {
@@ -51,19 +75,29 @@ public class TicketPrice {
 		CinemaClass = cinemaClass;
 	}
 	public Double getPrice() {
+		Price = Modifier[0];
+		if (HolidayDate.contains(DateComparator))
+			Price+=Modifier[1];
+		if (Age<6)
+			Price -= Modifier[2];
+		if (Age>55)
+			Price += Modifier[3];
+		if (CinemaClass=="PREMIUM")
+			Price+= Modifier[4];
+		if (MovieType=="3D MOVIE")
+			Price+= Modifier[5];
+		if (MovieType=="Blockbuster")
+			Price+= Modifier[6];
 		return Price;
 	}
 	public void setPrice(Double price) {
 		Price = price;
 	}
-	public static void setModifier(Double[] Modifier) {
-		if (Modifier.length != 7){
-			return;
-		}
-		TicketPrice.Modifier = Modifier;
+	public void setModifier(Double[] Modifier) {
+		this.Modifier = Modifier;
 	}
-	public static Double[] getModifier() {
-		return TicketPrice.Modifier;
+	public Double[] getModifier() {
+		return this.Modifier;
 	}
 	public void setDate(GregorianCalendar DateShown) {
 		this.DateShown = DateShown;
