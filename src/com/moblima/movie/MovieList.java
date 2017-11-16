@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
-import java.lang.String.contains();
+import java.lang.String;
 
 public class MovieList {
 	private ArrayList<Movie> Movies;
@@ -143,10 +143,10 @@ public class MovieList {
 	
 	public void searchMovie(String searchInput) {
 		int count = 0;
-		for (int i=0; i<Movies.getMovie().size(); i++) {
-			if (Movies.getMovie().getTitle().contains(searchInput)) {
+		for (int i=0; i<this.getMovie().size(); i++) {
+			if (this.getMovie().get(i).getTitle().contains(searchInput)) {
 				count++;
-				System.out.println(count + ". " + Movies.getMovie().getTitle());
+				System.out.println(count + ". " + this.getMovie().get(i).getTitle());
 			}
 		}
 	}

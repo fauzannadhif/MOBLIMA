@@ -25,7 +25,7 @@ public class TicketPrice {
 			File DatabaseFile = new File("../../../../data/HolidayDate.txt");
 			this.HolidayDate = readHolidayDates(DatabaseFile);
 		} catch (Exception e) {
-			//TODO: handle exception
+			System.out.println("IOException > " + e.getMessage());
 		}
 	}
 
