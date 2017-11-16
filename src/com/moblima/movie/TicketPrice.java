@@ -4,20 +4,15 @@ import java.util.GregorianCalendar;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
 import java.util.Scanner;
 
 public class TicketPrice {
 	private static String separator1 = "|";
-	private GregorianCalendar DateShown;
 	private static ArrayList<GregorianCalendar> HolidayDate;
-	private int Age;
-	private String MovieType;
-	private String CinemaClass;
-	private Double Price;
 	private Double[] Modifier;
-	GregorianCalendar DateComparator = new GregorianCalendar(this.DateShown.YEAR, this.DateShown.DAY_OF_MONTH, this.DateShown.YEAR);
 	public TicketPrice(){
 		try {
 			File DatabaseFile = new File("../../../../data/ShowTimeList.txt");
@@ -56,55 +51,32 @@ public class TicketPrice {
         return data;
 	}
 	
-	public int getAge() {
-		return Age;
-	}
-	public void setAge(int age) {
-		Age = age;
-	}
-	public String getMovieType() {
-		return MovieType;
-	}
-	public void setMovieType(String movieType) {
-		MovieType = movieType;
-	}
-	public String getCinemaClass() {
-		return CinemaClass;
-	}
-	public void setCinemaClass(String cinemaClass) {
-		CinemaClass = cinemaClass;
-	}
-	public Double getPrice() {
-		Price = Modifier[0];
-		if (HolidayDate.contains(DateComparator))
+	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyymmdd");
+		fmt.setCalendar(date);
+		Double Price = Modifier[0];
+		if (HolidayDate.contains(date))
 			Price+=Modifier[1];
-		if (Age<6)
+		if (age<6)
 			Price -= Modifier[2];
-		if (Age>55)
+		if (age>55)
 			Price += Modifier[3];
-		if (CinemaClass=="PREMIUM")
+		if (cinemaclass=="PREMIUM")
 			Price+= Modifier[4];
-		if (MovieType=="3D MOVIE")
+		if (movietype=="3D MOVIE")
 			Price+= Modifier[5];
-		if (MovieType=="Blockbuster")
+		if (movietype=="Blockbuster")
 			Price+= Modifier[6];
 		return Price;
 	}
-	public void setPrice(Double price) {
-		Price = price;
-	}
+
 	public void setModifier(Double[] Modifier) {
 		this.Modifier = Modifier;
 	}
 	public Double[] getModifier() {
 		return this.Modifier;
 	}
-	public void setDate(GregorianCalendar DateShown) {
-		this.DateShown = DateShown;
-	}
-	public GregorianCalendar getDate() {
-		return this.DateShown;
-	}
+
 	public static void setHolidayDate(ArrayList<GregorianCalendar> HolidayDate) {
 		TicketPrice.HolidayDate = HolidayDate;
 	}

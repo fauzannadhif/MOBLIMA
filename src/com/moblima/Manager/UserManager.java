@@ -2,7 +2,6 @@ package com.moblima.Manager;
 
 import com.moblima.users.User;
 import com.moblima.movie.*;
-import java.util.GregorianCalendar;
 import java.util.ArrayList;
 
 
@@ -16,11 +15,10 @@ public final class UserManager{
     }
 
     public String bookMovie(User user, ShowTime showtime){
-        GregorianCalendar date = showtime.getDate();
-        String bookingID = showtime.getCinema().getCinemaCode() + date;
+        String bookingID = showtime.getCinema().getCinemaCode() + showtime.getDate().toString();
         user.addBookingHistory(bookingID);
-        TicketPrice ticketprice = new TicketPrice(date,user.getAge(),showtime.getMovieShown().getType(),showtime.getCinema().getType());
-        Double price = ticketprice.getPrice();
+        TicketPrice ticketprice = new TicketPrice();
+        Double price = ticketprice.getPrice(showtime.getDate(), user.getAge(), showtime.getCinema().getType(),showtime.getMovieShown().getType());
         System.out.println("Your price = " + price);
         return bookingID;
     }
