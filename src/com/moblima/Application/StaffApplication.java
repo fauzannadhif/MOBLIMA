@@ -41,7 +41,7 @@ public class StaffApplication {
 		Cinema ChosenCinema;
 		GregorianCalendar ChosenDate;
 		TicketPrice TicketPrices = new TicketPrice();
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 		
 		int choice = 0;
 		
