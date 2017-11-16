@@ -83,7 +83,7 @@ public class TicketPrice {
 			Price += Modifier[3];
 		if (cinemaclass=="PREMIUM")
 			Price+= Modifier[4];
-		if (movietype=="3D MOVIE")
+		if (movietype=="3D")
 			Price+= Modifier[5];
 		if (movietype=="Blockbuster")
 			Price+= Modifier[6];

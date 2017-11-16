@@ -73,9 +73,9 @@ public class StaffApplication {
 				int i=0;
 				while(true){
 					String desiredINPUT = sc.next();
-					if(desiredINPUT=="0" && i>=2)
+					if(desiredINPUT.equals("0") && i>=2)
 						break;
-					else if(desiredINPUT=="0" && i<2)
+					else if(desiredINPUT.equals("0") && i<2)
 						System.out.println("Please add more cast");
 					else{	
 						Cast.add(desiredINPUT);
