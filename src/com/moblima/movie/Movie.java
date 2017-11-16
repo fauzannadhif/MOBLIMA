@@ -12,7 +12,7 @@ public class Movie {
 	private String Director;
 	private String Type;
 	private ArrayList<String> Cast;
-	private Float OverallRating;
+	private Double OverallRating;
 	private ArrayList<Integer> Rating;
 	private ArrayList<String> Review;
 	private String AgeRating;
@@ -28,6 +28,11 @@ public class Movie {
 		this.Rating = Rating;
 		this.Review = Review;
 		this.AgeRating = AgeRating;
+		this.OverallRating = 0.0;
+		for(int i=0;i <Rating.size(); i++){
+			OverallRating +=Rating.get(i);
+		}
+		OverallRating = OverallRating/Rating.size();
 	}
 	
 	public String getTitle() {
@@ -78,7 +83,7 @@ public class Movie {
 		Cast = cast;
 	}
 
-	public Float getOverallRating() {
+	public Double getOverallRating() {
 		return OverallRating;
 	}
 
