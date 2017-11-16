@@ -117,7 +117,6 @@ public class MovieList {
 		}
 		else if (choice == 2){
 			System.out.println("Sorting by overall reviewers ratings");
-			System.out.println("Sorting by ticket sales");
 			int i;
 			int j;
 			for(i=0;i<this.Movies.size();i++){
