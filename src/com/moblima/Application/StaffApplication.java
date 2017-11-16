@@ -21,8 +21,7 @@ public class StaffApplication {
 			System.out.println("Password: ");
 			String pass = sc.next();
 			
-			if ((username == "username") && (pass == "password")){
-				//change the username and password to match with the database
+			if (Staff.checkvalidity(username, pass)){
 				staff = new Staff(username,pass);
 				break;
 			}

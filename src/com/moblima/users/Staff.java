@@ -28,7 +28,7 @@ public class Staff{
         this.Password = password;
     }
     private static String separator1 = "|";
-    public Boolean checkvalidity(String username, String password){
+    public static Boolean checkvalidity(String username, String password){
         try {
             File DatabaseFile = new File("../../../../data/UseramePassword.txt");
             ArrayList<String> StringArray = read(DatabaseFile);

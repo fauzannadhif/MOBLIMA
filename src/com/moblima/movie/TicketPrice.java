@@ -51,6 +51,7 @@ public class TicketPrice {
 			String st = StringArray.get(i);
 			StringTokenizer star = new StringTokenizer(st, separator1);
 			String holidaydate = star.nextToken().trim();
+
 			HolidayDates.add(holidaydate);
 		}
 		return HolidayDates;
@@ -72,8 +73,9 @@ public class TicketPrice {
 	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyymmdd");
 		fmt.setCalendar(date);
+		String DateInString = fmt.format(date);
 		Double Price = Modifier[0];
-		if (HolidayDate.contains(date.toString()))
+		if (HolidayDate.contains(DateInString))
 			Price+=Modifier[1];
 		if (age<6)
 			Price -= Modifier[2];
