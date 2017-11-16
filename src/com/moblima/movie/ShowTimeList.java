@@ -30,8 +30,7 @@ public class ShowTimeList {
     }
 
     public void removeShowTimes(ShowTime removedShowTime){
-		showTimes.set(showTimes.indexOf(removedShowTime), showTimes.get(showTimes.size()-1));
-		showTimes.remove(showTimes.size()-1);
+		showTimes.remove(showTimes.indexOf(removedShowTime));
     }
     
     public ArrayList<ShowTime> readShowTimes(File DatabaseFile) throws IOException{

@@ -94,8 +94,7 @@ public class MovieList {
 	}
 
 	public void removeMovie(Movie removedMovie){
-		Movies.set(Movies.indexOf(removedMovie), Movies.get(Movies.size()-1));
-		Movies.remove(Movies.size()-1);
+		Movies.remove(Movies.indexOf(removedMovie));
 	}
 	
 	public ArrayList<String> sortMovie(int choice){
