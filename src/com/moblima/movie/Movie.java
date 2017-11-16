@@ -5,7 +5,6 @@ import java.util.ArrayList;
 /**
  * Represents a movie.
  */
-
 public class Movie {
 
 	/**

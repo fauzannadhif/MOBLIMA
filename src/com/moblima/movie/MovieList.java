@@ -9,12 +9,22 @@ import com.moblima.Manager.ServerInterface;
 
 import java.lang.String;
 
+/**
+ * Represents a list of movies.
+ */
 public class MovieList {
+	/**
+	 * The list of movies in this movie list.
+	 */
 	private ArrayList<Movie> Movies;
 	private static String separator1 = "|";
 	private static String separator2 = ";";
 	private ServerInterface DBInterface = ServerInterface.getINSTANCE();
 
+	/**
+	 * Default constructor, which constructs
+	 * connection to database.
+	 */
 	public MovieList(){
 		try {
 			File DatabaseFile = new File("data\\MovieList.txt");
@@ -24,7 +34,9 @@ public class MovieList {
 		}
 	}
 
-
+	/***
+	 * Reads movies from a database file
+	 */
 	public ArrayList<Movie> readMovies(File DatabaseFile) throws IOException{
 		ArrayList<Movie> movies = new ArrayList<Movie>();
 		ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);
@@ -73,19 +85,32 @@ public class MovieList {
 		return movies;
 	}
 
+	/**
+	 * Adds a new movie to the list.
+	 */
 	public void addMovie(Movie newMovie){
 		Movies.add(newMovie);
 		// FILEIO
 	}
-	
+
+	/**
+	 * Gets the list of movies.
+	 */
 	public ArrayList<Movie> getMovie(){
 		return this.Movies;
 	}
 
+	/**
+	 * Remove a movie from the list.
+	 */
 	public void removeMovie(Movie removedMovie){
 		Movies.remove(Movies.indexOf(removedMovie));
 	}
-	
+
+	/**
+	 * Sorts movie list according to
+	 * ticket sales or overall rating.
+	 */
 	public ArrayList<String> sortMovie(int choice){
 		ArrayList<Movie> sortedMovies = Movies;
 		ArrayList<String> result = new ArrayList<String>();
@@ -127,7 +152,12 @@ public class MovieList {
 		}
 		return result;		
 	}
-	
+
+	/**
+	 * Search for movies in the list with
+	 * the input string contained in
+	 * its title.
+	 */
 	public void searchMovie(String searchInput) {
 		int count = 0;
 		for (int i=0; i<this.getMovie().size(); i++) {
