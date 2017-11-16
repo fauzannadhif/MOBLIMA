@@ -32,11 +32,10 @@ public class StaffApplication {
 		}
 
 		MovieList Movies = new MovieList(); 
-		Movie ChosenMovie;
-		String MovieName;
-		ShowTimeList ShowTimes = new ShowTimeList();
-		ShowTime ChosenShowTime;
 		CineplexList Cineplexes = CineplexList.getInstance();
+		ShowTimeList ShowTimes = new ShowTimeList();
+		Movie ChosenMovie;
+		ShowTime ChosenShowTime;
 		Cineplex ChosenCineplex;
 		Cinema ChosenCinema;
 		GregorianCalendar ChosenDate;
@@ -46,8 +45,6 @@ public class StaffApplication {
 		int choice = 0;
 		
 		while (choice != 8) {
-			System.out.println("Press Enter to continue");
-
 			System.out.println("1. Create movie listing");
 			System.out.println("2. Update movie listing");
 			System.out.println("3. Remove movie listing");
@@ -63,8 +60,7 @@ public class StaffApplication {
 			switch(choice) {
 			case 1: //add new movie with its details
 				System.out.println("Please enter the movie title:");
-				MovieName = sc.next();
-				
+				String MovieName = sc.next();				
 				System.out.println("Status:");
 				String Status = sc.next();
 				System.out.println("Synopsis:");
