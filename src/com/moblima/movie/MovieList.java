@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.util.StringTokenizer;
+import java.lang.String.contains();
 
 public class MovieList {
 	private ArrayList<Movie> Movies;
@@ -68,19 +69,19 @@ public class MovieList {
 		return movies;
 	}
 
-    // Method to read data from text file
-    public static ArrayList<String> read(File DatabaseFile) throws IOException{
-        ArrayList<String> data = new ArrayList<String>();
-        Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
-        try {
-            while (sc.hasNextLine()){
-                data.add(sc.nextLine());
-            }
-        }
-        finally {
-            sc.close();
-        }
-        return data;
+	// Method to read data from text file
+	public static ArrayList<String> read(File DatabaseFile) throws IOException{
+        	ArrayList<String> data = new ArrayList<String>();
+        	Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
+        	try {
+        	    while (sc.hasNextLine()){
+        	        data.add(sc.nextLine());
+        	    }
+        	}
+        	finally {
+        	    sc.close();
+        	}
+        	return data;
 	}
 
 	public void addMovie(Movie newMovie){
@@ -138,5 +139,15 @@ public class MovieList {
 			result.add(i, sortedMovies.get(i).getTitle());
 		}
 		return result;		
+	}
+	
+	public void searchMovie(String searchInput) {
+		int count = 0;
+		for (int i=0; i<Movies.getMovie().size(); i++) {
+			if (Movies.getMovie().getTitle().contains(searchInput)) {
+				count++;
+				System.out.println(count + ". " + Movies.getMovie().getTitle());
+			}
+		}
 	}
 }
