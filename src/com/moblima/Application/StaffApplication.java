@@ -186,7 +186,20 @@ public class StaffApplication {
 						System.out.println((m+1)+". "+ChosenCineplex.getCinemaList().get(m).getCinemaCode());
 					}
 					ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
-					ChosenDate = new GregorianCalendar(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt());
+					System.out.println("Please input the date in numbers");
+					System.out.println("Year: ");
+					int ye=sc.nextInt();
+					System.out.println("Month: ");
+					int mo=sc.nextInt();
+					System.out.println("Day: ");
+					int da=sc.nextInt();
+					System.out.println("Hour: ");
+					int ho=sc.nextInt();
+					System.out.println("Minute: ");
+					int mi=sc.nextInt();
+					System.out.println("Second: ");
+					int se=sc.nextInt();
+					ChosenDate = new GregorianCalendar(ye,mo,da,ho,mi,se);
 					ShowTime newshowtime = new ShowTime(ChosenMovie, ChosenCinema, ChosenDate, ChosenCineplex);
 					ShowTimes.addShowTimes(newshowtime);
 					ChosenMovie.setStatus("Now Showing");
@@ -195,7 +208,7 @@ public class StaffApplication {
 			case 5: //update the showtime of a movie
 					System.out.println("Which showtime would you like to update?");
 					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
-						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(index).getDate().toString());
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
 					System.out.println("What would you like to change?");
@@ -226,7 +239,7 @@ public class StaffApplication {
 			case 6: //remove a showtime of a movie
 					System.out.println("Which showtime would you like to remove?");
 					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
-						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex()+", "+ShowTimes.getShowTimes().get(index).getDate());
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(index).getDate().toString());
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
 					ShowTimes.removeShowTimes(ChosenShowTime);
