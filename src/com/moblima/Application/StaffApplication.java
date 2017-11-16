@@ -87,7 +87,7 @@ public class StaffApplication {
 				String AgeRating = sc.next();
 				ArrayList<Integer> Rating = new ArrayList<Integer>();
 				ArrayList<String> Review = new ArrayList<String>();
-				Movie newMovie = new Movie(MovieName,Status,Synopsis,Director,Type,Cast,Rating,Review,AgeRating);
+				Movie newMovie = new Movie(MovieName,Status,Synopsis,Director,Type,Cast,Rating,Review,AgeRating,0);
 				Movies.addMovie(newMovie);
 
 				break;

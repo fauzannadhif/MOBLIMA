@@ -18,7 +18,7 @@ public class Movie {
 	private String AgeRating;
 	private int TicketSales;
 	
-	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,ArrayList<Integer> Rating, ArrayList<String> Review, String AgeRating){
+	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,ArrayList<Integer> Rating, ArrayList<String> Review, String AgeRating, Integer TicketSales){
 		this.Title = Title;
 		this.Status = Status;
 		this.Synopsis = Synopsis;
@@ -33,6 +33,7 @@ public class Movie {
 			OverallRating +=Rating.get(i);
 		}
 		OverallRating = OverallRating/Rating.size();
+		this.TicketSales = TicketSales;
 	}
 	
 	public String getTitle() {

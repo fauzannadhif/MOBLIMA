@@ -62,7 +62,8 @@ public class MovieList {
 				}
 			}
 			String AgeRating = star.nextToken().trim();
-			movie = new Movie(Title, Status, Synopsis, Director, Type, Cast, Rating, Review, AgeRating);
+			Integer TicketSales = Integer.valueOf(star.nextToken().trim());
+			movie = new Movie(Title, Status, Synopsis, Director, Type, Cast, Rating, Review, AgeRating, TicketSales);
 			movies.add(movie);
 		}
 
