@@ -28,6 +28,8 @@ public class ShowTimeList {
                     for(int b=0; b<16; b++){
                         if(st.charAt((a*16)+b) == 't')
                             this.showTimes.get(i).getSeat().getSeats()[a][b] = true;
+                        else
+                            this.showTimes.get(i).getSeat().getSeats()[a][b] = false;
                     }
                 }
             }
