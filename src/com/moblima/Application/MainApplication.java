@@ -13,7 +13,7 @@ public class MainApplication {
 		int value;
 		while (true){
 			value = sc.nextInt();
-			if (value!=1 || value!=2)
+			if (value!=1 && value!=2)
 				System.out.println("Not a valid input! Please enter another input: ");
 			else
 				break;
