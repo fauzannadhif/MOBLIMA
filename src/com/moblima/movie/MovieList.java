@@ -134,7 +134,7 @@ public class MovieList {
 			result.add("Wrong Input");
 			return result;
 		}
-		for(int i=0; i<4; i++){
+		for(int i=0; i<5; i++){
 			result.add(i, sortedMovies.get(i).getTitle());
 		}
 		return result;		
