@@ -71,9 +71,9 @@ public class TicketPrice {
 	}
 	
 	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyymmdd");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		fmt.setCalendar(date);
-		String DateInString = fmt.format(date);
+		String DateInString = fmt.format(date.getTime());
 		Double Price = Modifier[0];
 		if (HolidayDate.contains(DateInString))
 			Price+=Modifier[1];

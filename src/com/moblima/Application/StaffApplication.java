@@ -3,6 +3,8 @@ package com.moblima.Application;
 import java.util.Scanner;
 import com.moblima.users.Staff;
 import com.moblima.movie.*;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
@@ -39,6 +41,7 @@ public class StaffApplication {
 		Cinema ChosenCinema;
 		GregorianCalendar ChosenDate;
 		TicketPrice TicketPrices = new TicketPrice();
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		
 		int choice = 0;
 		
@@ -208,7 +211,8 @@ public class StaffApplication {
 			case 5: //update the showtime of a movie
 					System.out.println("Which showtime would you like to update?");
 					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
-						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(index).getDate().toString());
+						fmt.setCalendar(ShowTimes.getShowTimes().get(index).getDate());
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+fmt.format(ShowTimes.getShowTimes().get(index).getDate().getTime()));
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
 					System.out.println("What would you like to change?");
@@ -239,7 +243,8 @@ public class StaffApplication {
 			case 6: //remove a showtime of a movie
 					System.out.println("Which showtime would you like to remove?");
 					for(int index=0; index<ShowTimes.getShowTimes().size(); index++){
-						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+ShowTimes.getShowTimes().get(index).getDate().toString());
+						fmt.setCalendar(ShowTimes.getShowTimes().get(index).getDate());
+						System.out.println((index+1)+". "+ShowTimes.getShowTimes().get(index).getMovieShown().getTitle()+", "+ShowTimes.getShowTimes().get(index).getCinema().getCinemaCode()+", "+ShowTimes.getShowTimes().get(index).getCineplex().getName()+", "+fmt.format(ShowTimes.getShowTimes().get(index).getDate().getTime()));
 					}
 					ChosenShowTime=ShowTimes.getShowTimes().get(sc.nextInt()-1);
 					ShowTimes.removeShowTimes(ChosenShowTime);
