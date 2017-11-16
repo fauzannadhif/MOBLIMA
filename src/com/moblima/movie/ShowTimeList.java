@@ -19,6 +19,22 @@ public class ShowTimeList {
         } catch (IOException e) {
             System.out.println("IOException > " + e.getMessage());
         }
+        try {
+            File DatabaseFile = new File("data\\Seat.txt");
+            ArrayList<String> StringArray = read(DatabaseFile);
+            for (int i=0; i<StringArray.size(); i++){
+                String st = StringArray.get(i);
+                for(int a=0; a<10; a++){
+                    for(int b=0; b<16; b++){
+                        if(st.charAt((a*16)+b) == 't')
+                            this.showTimes.get(i).getSeat().getSeats()[a][b] = true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+        
     }
 
     public ArrayList<ShowTime> getShowTimes() {
