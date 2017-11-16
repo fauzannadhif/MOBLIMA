@@ -94,7 +94,7 @@ public class StaffApplication {
 			case 2: //update the details of existing movies
 				System.out.println("Please select the movie you want to update(please input the no.)");
 				for (int index=0; index<Movies.getMovie().size(); index++){
-					System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+					System.out.println((index+1) + ". " + Movies.getMovie().get(index).getTitle());
 				}
 				ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
 				System.out.println("What would you like to edit from this movie?");
@@ -159,7 +159,7 @@ public class StaffApplication {
 			case 3: //remove a movie from the list
 					System.out.println("Which movie would you like to remove? (please input the no.)");
 					for (int index=0; index<Movies.getMovie().size(); index++){
-						System.out.println((index+1) + ". " + Movies.getMovie().get(index+1).getTitle());
+						System.out.println((index+1) + ". " + Movies.getMovie().get(index).getTitle());
 					}
 					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
 					Movies.removeMovie(ChosenMovie);
