@@ -111,32 +111,36 @@ public class StaffApplication {
 					System.out.println("Please enter the new title");
 					ChosenMovie.setTitle(sc.next());
 				}
-				if(input == 2)
+				if(input == 2){
 					System.out.println("Old status: " + ChosenMovie.getStatus());
 					System.out.println("Please enter the new status");
-					ChosenMovie.setStatus(sc.next());	
-				if(input == 3)
+					ChosenMovie.setStatus(sc.next());
+				}	
+				if(input == 3){
 					System.out.println("Old synopsis: " + ChosenMovie.getSynopsis());
 					System.out.println("Please enter the new synopsis");
 					ChosenMovie.setSynopsis(sc.next());
-				if(input == 4)
+				}
+				if(input == 4){
 					System.out.println("Old director: " + ChosenMovie.getDirector());
 					System.out.println("Please enter the new director");
-					ChosenMovie.setDirector(sc.next());				
-				if(input == 5)
+					ChosenMovie.setDirector(sc.next());
+				}			
+				if(input == 5){
 					System.out.println("Old type: " + ChosenMovie.getType());
 					System.out.println("Please enter the new type");
 					ChosenMovie.setType(sc.next());
-				if(input == 6)
+				}
+				if(input == 6){
 					System.out.println("Old casts: " + ChosenMovie.getCast());
 					System.out.println("Please enter the new casts(Please enter at least 2 casts, press 0 to finish");
 					ArrayList<String> newcasts = new ArrayList<String>();
 					int j=0;
 					while(true){
 						String desiredINPUT = sc.next();
-						if(desiredINPUT=="0" && j>=2)
+						if(desiredINPUT.equals("0") && j>=2)
 							break;
-						else if(desiredINPUT=="0" && j<2)
+						else if(desiredINPUT.equals("0") && j<2)
 							System.out.println("Please add more cast");
 						else{	
 							newcasts.add(desiredINPUT);
@@ -144,11 +148,12 @@ public class StaffApplication {
 						}					
 					}
 					ChosenMovie.setCast(newcasts);
-				if(input == 7)
+				}
+				if(input == 7){
 					System.out.println("Old age rating: " + ChosenMovie.getAgeRating());
 					System.out.println("Please enter the new age rating");
 					ChosenMovie.setAgeRating(sc.next());
-
+				}
 				break;
 				
 			case 3: //remove a movie from the list
