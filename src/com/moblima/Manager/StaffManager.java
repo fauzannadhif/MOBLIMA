@@ -1,5 +1,207 @@
 package com.moblima.Manager;
 
-public class StaffManager{
-    
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.io.IOException;
+
+import com.moblima.movie.Cinema;
+import com.moblima.movie.Cineplex;
+import com.moblima.movie.Movie;
+import com.moblima.movie.MovieList;
+import com.moblima.movie.ShowTime;
+import com.moblima.movie.ShowTimeList;
+import com.moblima.movie.TicketPrice;
+
+public final class StaffManager{
+    private ServerInterface DBInterface = ServerInterface.getINSTANCE();
+    private SimpleDateFormat fmt = new SimpleDateFormat("yyyy;MM;dd;HH;mm;ss");
+    private static final StaffManager INSTANCE = new StaffManager();
+    private StaffManager(){};
+
+    /**
+     * @return the instance
+     */
+    public static StaffManager getInstance() {
+        return INSTANCE;
+    }
+
+    public void addMovie(Movie newMovie, MovieList Movies){
+        Movies.addMovie(newMovie);
+        File DatabaseFile = new File("data\\MovieList.txt");
+        ArrayList<String> LineDataList = new ArrayList<String>();
+        LineDataList.add(newMovie.getTitle());
+        LineDataList.add(newMovie.getStatus());
+        LineDataList.add(newMovie.getSynopsis());
+        LineDataList.add(newMovie.getDirector());
+        LineDataList.add(newMovie.getType());
+        for (String s: newMovie.getCast())
+            LineDataList.add(s);
+        for (Integer i: newMovie.getRating())
+            LineDataList.add(i.toString());
+        for (String s: newMovie.getCast())
+            LineDataList.add(s);
+        LineDataList.add(newMovie.getAgeRating());
+        LineDataList.add(String.valueOf(newMovie.getTicketSales()));
+        String LineData = "";
+        for (String s: LineDataList)
+            LineData += s + " | ";
+        LineData = LineData.substring(0, LineData.length()-3);
+        try {
+            DBInterface.NewLine(DatabaseFile, LineData);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+        return;
+    }
+
+    public void updateDetails(Movie chosenMovie){
+        File DatabaseFile = new File("data\\MovieList.txt");
+        String OldString = "";
+        String NewString = "";
+        ArrayList<String> LineDataList = new ArrayList<String>();
+        LineDataList.add(chosenMovie.getTitle());
+        LineDataList.add(chosenMovie.getStatus());
+        LineDataList.add(chosenMovie.getSynopsis());
+        LineDataList.add(chosenMovie.getDirector());
+        LineDataList.add(chosenMovie.getType());
+        for (String s: chosenMovie.getCast())
+            LineDataList.add(s);
+        for (Integer i: chosenMovie.getRating())
+            LineDataList.add(i.toString());
+        for (String s: chosenMovie.getCast())
+            LineDataList.add(s);
+        LineDataList.add(chosenMovie.getAgeRating());
+        LineDataList.add(String.valueOf(chosenMovie.getTicketSales()));
+        for (String s: LineDataList)
+            NewString+= s + " | ";
+        NewString = NewString.substring(0, NewString.length()-3);
+        try {
+            ArrayList<String> st = DBInterface.ReadFile(DatabaseFile);
+            for (String s: st){
+                if (s.startsWith(chosenMovie.getTitle())){
+                    OldString = s;
+                    break;
+                }
+            }
+            DBInterface.RewriteLine(DatabaseFile, OldString, NewString);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
+    public void removeMovie(Movie removedMovie, MovieList Movies){
+        Movies.removeMovie(removedMovie);
+        File DatabaseFile = new File("data\\MovieList.txt");
+        try {
+            ArrayList<String> st = DBInterface.ReadFile(DatabaseFile);
+            String DeletedLine = "";
+            // Remove movie from MovieList.txt
+            for (int i=0; i<st.size(); i++){
+               if (st.get(i).startsWith(removedMovie.getTitle())){
+                    DeletedLine = st.get(i);
+                    break;
+                }
+            }
+            DBInterface.DeleteLine(DatabaseFile, DeletedLine);
+
+            DatabaseFile = new File("data\\ShowTimeList.txt");
+            st = DBInterface.ReadFile(DatabaseFile);
+            ArrayList<String> DeletedLineList = new ArrayList<String>();
+            for (int i=0; i<st.size(); i++){
+                if (st.get(i).startsWith(removedMovie.getTitle()))
+                    DeletedLineList.add(st.get(i));
+            }
+            for (String DeletedLine2: DeletedLineList)
+                DBInterface.DeleteLine(DatabaseFile, DeletedLine2);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+        
+    }
+
+    public void createShowtime(ShowTime newShowTime, ShowTimeList ShowTimes){
+        ShowTimes.addShowTimes(newShowTime);
+        File DatabaseFile = new File("data\\ShowTimeList.txt");
+        String LineData = newShowTime.getMovieShown().getTitle()+" | "+newShowTime.getCineplex().getName()+" | "+newShowTime.getCinema().getCinemaCode()+" | "+fmt.format(newShowTime.getDate().getTime());
+        try {
+            DBInterface.NewLine(DatabaseFile, LineData);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
+    public void updateShowTime(ShowTime updatedShowTime, Cineplex newCineplex, Cinema newCinema, GregorianCalendar newDate){
+        updatedShowTime.setCinema(newCinema);
+        updatedShowTime.setCineplex(newCineplex);
+        updatedShowTime.setDate(newDate);
+        File DatabaseFile = new File("data\\ShowTimeList.txt");
+        String OldString = "";
+        String NewString;
+        try {
+            ArrayList<String> st = DBInterface.ReadFile(DatabaseFile);
+            for (String s: st){
+                if (s.startsWith(updatedShowTime.getMovieShown().getTitle())){
+                    OldString = s;
+                    break;
+                }
+            }
+            NewString = OldString.substring(0, OldString.indexOf("|") +1) + newCineplex.getName() + " | " + newCinema.getCinemaCode() + " | " + fmt.format(newDate.getTime());
+            DBInterface.RewriteLine(DatabaseFile, OldString, NewString);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
+    public void removeShowTime(ShowTime removedShowTime, ShowTimeList ShowTimes){
+        ShowTimes.removeShowTimes(removedShowTime);
+        File DatabaseFile = new File("data\\ShowTimeList.txt");
+        String DeletedLine = "";
+        try {
+            ArrayList<String> st = DBInterface.ReadFile(DatabaseFile);
+            for (String s: st){
+                if (s.startsWith(removedShowTime.getMovieShown().getTitle()))
+                    DeletedLine = s;
+            }
+            DBInterface.DeleteLine(DatabaseFile, DeletedLine);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
+    public void ConfigurePrice(Double[] newModifier){
+        File DatabaseFile = new File("data\\Modifiers.txt");
+        String NewString = "";
+        for (Double d: newModifier)
+            NewString += String.valueOf(d) + " | ";
+        NewString = NewString.substring(0, NewString.length()-3);
+        try {
+            String OldString = DBInterface.ReadFile(DatabaseFile).get(0);
+            DBInterface.RewriteLine(DatabaseFile, OldString, NewString);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
+
+    public void addHoliday(String newDate, TicketPrice ticketPrice){
+        ticketPrice.addHolidayDate(newDate);
+        File DatabaseFile = new File("data\\HolidayDate.txt");
+        try {
+            DBInterface.NewLine(DatabaseFile, newDate);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+
+    }
+
+    public void removeHoliday(String removedDate, TicketPrice ticketPrice){
+        ticketPrice.removeHolidayDate(removedDate);
+        File DatabaseFile = new File("data\\HolidayDate.txt");
+        try {
+            DBInterface.DeleteLine(DatabaseFile, removedDate);
+        } catch (IOException e) {
+            System.out.println("IOException > " + e.getMessage());
+        }
+    }
 }

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 public final class UserManager{
     private static final UserManager INSTANCE = new UserManager();
-    
     private UserManager(){}
     
     public static UserManager getInstance() {

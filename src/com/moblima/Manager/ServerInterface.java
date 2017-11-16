@@ -22,6 +22,8 @@ public final class ServerInterface{
     public int RewriteLine(File DatabaseFile, String OldString, String NewString) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
+        if (OldString.isEmpty())
+            return 3;
         List<String> fileContent = new ArrayList<String>(Files.readAllLines(DatabaseFile.toPath(), StandardCharsets.UTF_8));
         for (int i = 0; i < fileContent.size(); i++){
             if (fileContent.get(i).equals(OldString)){
@@ -43,6 +45,8 @@ public final class ServerInterface{
     public int DeleteLine(File DatabaseFile, String DeletedLine) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
+        if (DeletedLine.isEmpty())
+            return 3;
         List<String> fileContent = new ArrayList<String>(Files.readAllLines(DatabaseFile.toPath(), StandardCharsets.UTF_8));
         for (int i = 0; i < fileContent.size(); i++){
             if (fileContent.get(i).equals(DeletedLine)){

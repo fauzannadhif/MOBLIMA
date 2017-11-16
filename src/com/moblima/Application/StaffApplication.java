@@ -2,6 +2,7 @@ package com.moblima.Application;
 
 import java.util.Scanner;
 import com.moblima.users.Staff;
+import com.moblima.Manager.StaffManager;
 import com.moblima.movie.*;
 
 import java.text.SimpleDateFormat;
@@ -10,7 +11,7 @@ import java.util.GregorianCalendar;
 
 public class StaffApplication {
 	private static Scanner sc = new Scanner(System.in);
-	private static Staff staff;
+	private static StaffManager staffmgr = StaffManager.getInstance(); 
 	
 	
 	public static void main() {
@@ -28,7 +29,6 @@ public class StaffApplication {
 			String pass = sc.next();
 			
 			if (Staff.checkvalidity(username, pass)){
-				staff = new Staff(username,pass);
 				break;
 			}
 			else
@@ -92,7 +92,7 @@ public class StaffApplication {
 				ArrayList<Integer> Rating = new ArrayList<Integer>();
 				ArrayList<String> Review = new ArrayList<String>();
 				Movie newMovie = new Movie(MovieName,Status,Synopsis,Director,Type,Cast,Rating,Review,AgeRating,0);
-				Movies.addMovie(newMovie);
+				staffmgr.addMovie(newMovie, Movies);
 
 				break;
 				
@@ -115,26 +115,31 @@ public class StaffApplication {
 					System.out.println("Old title: " + ChosenMovie.getTitle());
 					System.out.println("Please enter the new title");
 					ChosenMovie.setTitle(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}
 				if(input == 2){
 					System.out.println("Old status: " + ChosenMovie.getStatus());
 					System.out.println("Please enter the new status");
 					ChosenMovie.setStatus(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}	
 				if(input == 3){
 					System.out.println("Old synopsis: " + ChosenMovie.getSynopsis());
 					System.out.println("Please enter the new synopsis");
 					ChosenMovie.setSynopsis(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}
 				if(input == 4){
 					System.out.println("Old director: " + ChosenMovie.getDirector());
 					System.out.println("Please enter the new director");
 					ChosenMovie.setDirector(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}			
 				if(input == 5){
 					System.out.println("Old type: " + ChosenMovie.getType());
 					System.out.println("Please enter the new type");
 					ChosenMovie.setType(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}
 				if(input == 6){
 					System.out.println("Old casts: " + ChosenMovie.getCast());
@@ -153,11 +158,13 @@ public class StaffApplication {
 						}					
 					}
 					ChosenMovie.setCast(newcasts);
+					staffmgr.updateDetails(ChosenMovie);
 				}
 				if(input == 7){
 					System.out.println("Old age rating: " + ChosenMovie.getAgeRating());
 					System.out.println("Please enter the new age rating");
 					ChosenMovie.setAgeRating(sc.next());
+					staffmgr.updateDetails(ChosenMovie);
 				}
 				break;
 				
@@ -167,7 +174,7 @@ public class StaffApplication {
 						System.out.println((index+1) + ". " + Movies.getMovie().get(index).getTitle());
 					}
 					ChosenMovie = Movies.getMovie().get(sc.nextInt()-1);
-					Movies.removeMovie(ChosenMovie);
+					staffmgr.removeMovie(ChosenMovie, Movies);
 				break;
 				
 			case 4: //create new showtime for a movie
@@ -206,7 +213,7 @@ public class StaffApplication {
 					int se=sc.nextInt();
 					ChosenDate = new GregorianCalendar(ye,mo,da,ho,mi,se);
 					ShowTime newshowtime = new ShowTime(ChosenMovie, ChosenCinema, ChosenDate, ChosenCineplex);
-					ShowTimes.addShowTimes(newshowtime);
+					staffmgr.createShowtime(newshowtime, ShowTimes);
 					ChosenMovie.setStatus("Now Showing");
 				break;
 				
@@ -232,8 +239,7 @@ public class StaffApplication {
 							System.out.println((y+1)+". "+ChosenCineplex.getCinemaList().get(y).getCinemaCode());
 						}
 						ChosenCinema = ChosenCineplex.getCinemaList().get(sc.nextInt()-1);
-						ChosenShowTime.setCineplex(ChosenCineplex);
-						ChosenShowTime.setCinema(ChosenCinema) ;
+						staffmgr.updateShowTime(ChosenShowTime, ChosenCineplex, ChosenCinema, ChosenShowTime.getDate());
 					}
 					if(select == 2){
 						System.out.println("Please input the new date: ");
@@ -250,7 +256,7 @@ public class StaffApplication {
 						System.out.println("Second: ");
 						int se2=sc.nextInt();
 						ChosenDate = new GregorianCalendar(ye2, mo2, da2, ho2, mi2, se2);
-						ChosenShowTime.setDate(ChosenDate);
+						staffmgr.updateShowTime(ChosenShowTime, ChosenShowTime.getCineplex(), ChosenShowTime.getCinema(), ChosenDate);
 					}
 				break;
 				
@@ -283,36 +289,43 @@ public class StaffApplication {
 							System.out.println("The old base price is: " + TicketPrices.getModifier()[0]);
 							System.out.println("Please input your new base price: ");
 							TicketPrices.getModifier()[0] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==2){
 							System.out.println("The old additional price for holiday is: " + TicketPrices.getModifier()[1]);
 							System.out.println("Please input your new additional price: ");
 							TicketPrices.getModifier()[1] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==3){
 							System.out.println("The old substractive price for children is: " + TicketPrices.getModifier()[2]);
 							System.out.println("Please input your new substractive price: ");
 							TicketPrices.getModifier()[2] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==4){
 							System.out.println("The old substractive price for senior citizen is: " + TicketPrices.getModifier()[3]);
 							System.out.println("Please input your new substractive price: ");
 							TicketPrices.getModifier()[3] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==5){
 							System.out.println("The old additional price for premium cinema is: " + TicketPrices.getModifier()[4]);
 							System.out.println("Please input your new additional price: ");
 							TicketPrices.getModifier()[4] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==6){
 							System.out.println("The old additional price for 3D movie is: " + TicketPrices.getModifier()[5]);
 							System.out.println("Please input your new additional price: ");
 							TicketPrices.getModifier()[5] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 						if(option==7){
 							System.out.println("The old additional price for blockbuster movie is: " + TicketPrices.getModifier()[6]);
 							System.out.println("Please input your new additional price: ");
 							TicketPrices.getModifier()[6] = sc.nextDouble();
+							staffmgr.ConfigurePrice(TicketPrices.getModifier());
 						}
 					}
 
@@ -324,6 +337,7 @@ public class StaffApplication {
 						System.out.println("What would you like to do?");
 						System.out.println("1. Add a holiday date");
 						System.out.println("2. Remove a holiday date");
+						SimpleDateFormat fmt2 = new SimpleDateFormat("yyyymmdd");
 						int choose = sc.nextInt();
 						if(choose == 1){
 							System.out.println("Please enter the date in numbers");
@@ -334,7 +348,8 @@ public class StaffApplication {
 							System.out.println("Day: ");
 							int daychosen = sc.nextInt();
 							GregorianCalendar chosendate = new GregorianCalendar(yearchosen, monthchosen, daychosen);
-							TicketPrices.addHolidayDate(chosendate.toString());
+							String newHolidayDate = (fmt2.format(chosendate.getTime()));
+							staffmgr.addHoliday(newHolidayDate, TicketPrices);
 						}
 						if(choose == 2){
 							System.out.println("Which date would you like to remove(please input the no.)");
