@@ -282,8 +282,8 @@ public class StaffApplication {
 
 					if(pick==2){
 						System.out.println("Here is the list of holidays: ");
-						for(int indexholiday=0;indexholiday<TicketPrice.getHolidayDate().size();indexholiday++){
-							System.out.println((indexholiday+1)+". "+TicketPrice.getHolidayDate().get(indexholiday));
+						for(int indexholiday=0;indexholiday<TicketPrices.getHolidayDate().size();indexholiday++){
+							System.out.println((indexholiday+1)+". "+TicketPrices.getHolidayDate().get(indexholiday));
 						}
 						System.out.println("What would you like to do?");
 						System.out.println("1. Add a holiday date");
@@ -298,12 +298,12 @@ public class StaffApplication {
 							System.out.println("Day: ");
 							int daychosen = sc.nextInt();
 							GregorianCalendar chosendate = new GregorianCalendar(yearchosen, monthchosen, daychosen);
-							TicketPrice.addHolidayDate(chosendate);
+							TicketPrices.addHolidayDate(chosendate.toString());
 						}
 						if(choose == 2){
 							System.out.println("Which date would you like to remove(please input the no.)");
-							GregorianCalendar removeddate = TicketPrice.getHolidayDate().get(sc.nextInt()-1);
-							TicketPrice.removeHolidayDate(removeddate);
+							String removeddate = TicketPrices.getHolidayDate().get(sc.nextInt()-1);
+							TicketPrices.removeHolidayDate(removeddate);
 						}
 					}
 				break;

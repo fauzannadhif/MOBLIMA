@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class TicketPrice {
 	private static String separator1 = "|";
-	private static ArrayList<GregorianCalendar> HolidayDate;
+	private ArrayList<String> HolidayDate;
 	private Double[] Modifier;
 	public TicketPrice(){
 		try {
@@ -19,6 +19,13 @@ public class TicketPrice {
             this.Modifier = readModifiers(DatabaseFile);
 		} catch (Exception e) {
 			System.out.println("IOException > " + e.getMessage());
+		}
+
+		try {
+			File DatabaseFile = new File("../../../../data/HolidayDate.txt");
+			this.HolidayDate = readHolidayDates(DatabaseFile);
+		} catch (Exception e) {
+			//TODO: handle exception
 		}
 	}
 
@@ -37,6 +44,17 @@ public class TicketPrice {
 		return modifiers;
 	}
 
+	public ArrayList<String> readHolidayDates(File DatabaseFile) throws IOException{
+		ArrayList<String> HolidayDates = new ArrayList<String>();
+		ArrayList<String> StringArray = read(DatabaseFile);
+		for(int i=0; i<StringArray.size();i++){
+			String st = StringArray.get(i);
+			StringTokenizer star = new StringTokenizer(st, separator1);
+			String holidaydate = star.nextToken().trim();
+			HolidayDates.add(holidaydate);
+		}
+		return HolidayDates;
+	}
 	public static ArrayList<String> read(File DatabaseFile) throws IOException{
         ArrayList<String> data = new ArrayList<String>();
         Scanner sc = new Scanner(new FileInputStream(DatabaseFile));
@@ -55,7 +73,7 @@ public class TicketPrice {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyymmdd");
 		fmt.setCalendar(date);
 		Double Price = Modifier[0];
-		if (HolidayDate.contains(date))
+		if (HolidayDate.contains(date.toString()))
 			Price+=Modifier[1];
 		if (age<6)
 			Price -= Modifier[2];
@@ -77,17 +95,17 @@ public class TicketPrice {
 		return this.Modifier;
 	}
 
-	public static void setHolidayDate(ArrayList<GregorianCalendar> HolidayDate) {
-		TicketPrice.HolidayDate = HolidayDate;
+	public void setHolidayDate(ArrayList<String> HolidayDate) {
+		this.HolidayDate = HolidayDate;
 	}
-	public static ArrayList<GregorianCalendar> getHolidayDate() {
-		return TicketPrice.HolidayDate;
+	public ArrayList<String> getHolidayDate() {
+		return this.HolidayDate;
 	}
-	public static void addHolidayDate(GregorianCalendar addedHolidayDate){
-		TicketPrice.HolidayDate.add(addedHolidayDate);
+	public void addHolidayDate(String addedHolidayDate){
+		this.HolidayDate.add(addedHolidayDate);
 	}
-	public static void removeHolidayDate(GregorianCalendar removedHolidayDate){
-		TicketPrice.HolidayDate.remove(removedHolidayDate);
+	public void removeHolidayDate(String removedHolidayDate){
+		this.HolidayDate.remove(removedHolidayDate);
 	}
 	
 }
