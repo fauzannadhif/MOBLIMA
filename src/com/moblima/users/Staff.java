@@ -37,7 +37,7 @@ public class Staff{
                 StringTokenizer star = new StringTokenizer(st, separator1);
                 String usernamedb = star.nextToken().trim();
                 String passworddb = star.nextToken().trim();
-                if(username==usernamedb && password==passworddb){
+                if(username.equals(usernamedb) && password.equals(passworddb)){
                     return true;
                 }
             }
