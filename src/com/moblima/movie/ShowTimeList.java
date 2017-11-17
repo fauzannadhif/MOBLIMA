@@ -7,12 +7,23 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 import com.moblima.Manager.ServerInterface;
 
+/**
+ * Represents a list of showtimes.
+ */
 public class ShowTimeList {
+
+    /**
+     * The list of showtimes in this showtime list.
+     */
     private ArrayList<ShowTime> showTimes;
     private static String separator1 = "|";
     private static String separator2 = ";";
     private ServerInterface DBInterface = ServerInterface.getINSTANCE();
-    
+
+    /**
+     * Default constructor, which constructs
+     * connection to database.
+     */
     public ShowTimeList(){
         try {
             File DatabaseFile = new File("data\\ShowTimeList.txt");
@@ -40,18 +51,30 @@ public class ShowTimeList {
         
     }
 
+    /**
+     * Gets the list of showtimes.
+     */
     public ArrayList<ShowTime> getShowTimes() {
         return showTimes;
     }
 
+    /**
+     * Add a new showtime to the list.
+     */
     public void addShowTimes(ShowTime newShowTime) {
         this.showTimes.add(newShowTime);
     }
 
+    /**
+     * Remove a showtime from the list.
+     */
     public void removeShowTimes(ShowTime removedShowTime){
 		showTimes.remove(showTimes.indexOf(removedShowTime));
     }
-    
+ 
+    /**
+     * Reads showtimes from the database file.
+     */
     public ArrayList<ShowTime> readShowTimes(File DatabaseFile) throws IOException{
 		ArrayList<ShowTime> showtimes = new ArrayList<ShowTime>();
 		ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);

@@ -8,12 +8,28 @@ import java.text.SimpleDateFormat;
 import java.util.StringTokenizer;
 import com.moblima.Manager.ServerInterface;
 
+/**
+ * Represents a ticket price.
+ */
 public class TicketPrice {
 	private static String separator1 = "|";
+
+	/**
+	 * List of holiday dates
+	 */
 	private ArrayList<String> HolidayDate;
+
+	/**
+	 * List of modifiers of this ticket price
+	 */
 	private Double[] Modifier;
+
 	private ServerInterface DBinterface = ServerInterface.getINSTANCE();
-	
+
+	/**
+	 * Default constructor, which constructs 
+	 * connection to database.
+	 */
 	public TicketPrice(){
 		try {
 			File DatabaseFile = new File("data\\Modifiers.txt");
@@ -30,6 +46,9 @@ public class TicketPrice {
 		}
 	}
 
+	/**
+	 * Reads the modifiers from database.
+	 */
 	public Double[] readModifiers(File DatabaseFile) throws IOException{
 		ArrayList<String> StringArray = DBinterface.ReadFile(DatabaseFile);
 		String st = StringArray.get(0);
@@ -45,6 +64,9 @@ public class TicketPrice {
 		return modifiers;
 	}
 
+	/**
+	 * Reads the holiday date from database.
+	 */
 	public ArrayList<String> readHolidayDates(File DatabaseFile) throws IOException{
 		ArrayList<String> HolidayDates = new ArrayList<String>();
 		ArrayList<String> StringArray = DBinterface.ReadFile(DatabaseFile);
@@ -57,7 +79,11 @@ public class TicketPrice {
 		}
 		return HolidayDates;
 	}
-	
+
+	/**
+	 * Calculate the price of this ticket price
+	 * and returns it
+	 */
 	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
 		fmt.setCalendar(date);
@@ -78,22 +104,44 @@ public class TicketPrice {
 		return Price;
 	}
 
+	/**
+	 * Changes the modifier of this ticket price.
+	 */
 	public void setModifier(Double[] Modifier) {
 		this.Modifier = Modifier;
 	}
+
+	/**
+	 * Gets the modifier of this ticket price.
+	 */
 	public Double[] getModifier() {
 		return this.Modifier;
 	}
 
+	/**
+	 * Changes the list of holiday dates.
+	 */
 	public void setHolidayDate(ArrayList<String> HolidayDate) {
 		this.HolidayDate = HolidayDate;
 	}
+
+	/**
+	 * Gets the list of holiday dates.
+	 */
 	public ArrayList<String> getHolidayDate() {
 		return this.HolidayDate;
 	}
+
+	/**
+	 * Adds a new holiday date to the list.
+	 */
 	public void addHolidayDate(String addedHolidayDate){
 		this.HolidayDate.add(addedHolidayDate);
 	}
+
+	/**
+	 * Removes a holiday date from the list.
+	 */
 	public void removeHolidayDate(String removedHolidayDate){
 		this.HolidayDate.remove(removedHolidayDate);
 	}
