@@ -66,6 +66,7 @@ public class User{
 
     /**
      * Gets the name of this user.
+     * @return this user's name.
      */
     public String getName(){
         return this.name;
@@ -73,6 +74,7 @@ public class User{
 
     /**
      * Gets the age of this user.
+     * @return this user's age.
      */
     public int getAge(){
         return this.age;
@@ -81,6 +83,7 @@ public class User{
     /**
      * Gets the booking history 
      * of this user.
+     * @return this user's booking history. 
      */
     public ArrayList<String> getBookingHistory(){
         return this.bookingHistory;
@@ -88,6 +91,7 @@ public class User{
 
     /**
      * Changes the name of this user.
+     * @param name the new name.
      */
     public void setName(String name){
         this.name = name;
@@ -95,6 +99,7 @@ public class User{
 
     /**
      * Changes the age of this user.
+     * @param age the new age.
      */
     public void setAge(int age){
         this.age = age;
@@ -103,6 +108,7 @@ public class User{
     /**
      * Adds a booking history for
      * this user.
+     * @param newBooking the booking history to add.
      */
     public void addBookingHistory(String newBooking){
         this.bookingHistory.add(newBooking);

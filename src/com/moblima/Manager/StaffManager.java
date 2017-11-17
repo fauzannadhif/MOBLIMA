@@ -36,6 +36,8 @@ public final class StaffManager{
 
     /**
      * Adds a movie to a movie list.
+     * @param newMovie the movie to be added.
+     * @param Movies the movie list.
      */
     public void addMovie(Movie newMovie, MovieList Movies){
         Movies.addMovie(newMovie);
@@ -69,6 +71,7 @@ public final class StaffManager{
 
     /**
      * Updates the details of a movie.
+     * @param chosenMovie the movie to be updated.
      */
     public void updateDetails(Movie chosenMovie){
         File DatabaseFile = new File("data\\MovieList.txt");
@@ -107,6 +110,8 @@ public final class StaffManager{
 
     /**
      * Removes a movie from a movie list.
+     * @param removedMovie the movie to be removed from the list.
+     * @param Movies the movie list.
      */
     public void removeMovie(Movie removedMovie, MovieList Movies){
         Movies.removeMovie(removedMovie);
@@ -140,6 +145,8 @@ public final class StaffManager{
 
     /**
      * Adds a showtime to a showtime list.
+     * @param newShowTime the showtime to be added.
+     * @param ShowTimes the showtime list.
      */
     public void createShowtime(ShowTime newShowTime, ShowTimeList ShowTimes){
         ShowTimes.addShowTimes(newShowTime);
@@ -154,6 +161,10 @@ public final class StaffManager{
 
     /**
      * Updates a showtime.
+     * @param updatedShowTime the showtime to be updated.
+     * @param newCineplex the new cineplex.
+     * @param newCinema the new cinema.
+     * @param newDate the new date.
      */
     public void updateShowTime(ShowTime updatedShowTime, Cineplex newCineplex, Cinema newCinema, GregorianCalendar newDate){
         updatedShowTime.setCinema(newCinema);
@@ -179,6 +190,8 @@ public final class StaffManager{
 
     /**
      * Removes a showtime from a showtime list.
+     * @param removedShowTime the showtime to be removed.
+     * @param ShowTimes the showtime list.
      */
     public void removeShowTime(ShowTime removedShowTime, ShowTimeList ShowTimes){
         ShowTimes.removeShowTimes(removedShowTime);
@@ -198,6 +211,7 @@ public final class StaffManager{
 
     /**
      * Configures the modifiers of ticket price.
+     * @param newModifier the new ticket price modifier.
      */
     public void ConfigurePrice(Double[] newModifier){
         File DatabaseFile = new File("data\\Modifiers.txt");
@@ -215,6 +229,8 @@ public final class StaffManager{
 
     /**
      * Adds a holiday date to the list in ticket price.
+     * @param newDate the new holiday date.
+     * @param ticketPrice the ticket price.
      */
     public void addHoliday(String newDate, TicketPrice ticketPrice){
         ticketPrice.addHolidayDate(newDate);
@@ -229,6 +245,8 @@ public final class StaffManager{
 
     /**
      * Removes a holiday date from the list.
+     * @param removedDate the date to be removed.
+     * @param ticketPrice the ticket price
      */
     public void removeHoliday(String removedDate, TicketPrice ticketPrice){
         ticketPrice.removeHolidayDate(removedDate);

@@ -31,6 +31,9 @@ public final class ServerInterface{
 
     /**
      * Rewrites a line in a database file.
+     * @param DatabaseFile the database file.
+     * @param OldString the old line to be deleted.
+     * @param NewString the new line to be written.
      */
     public int RewriteLine(File DatabaseFile, String OldString, String NewString) throws IOException{
         if (!DatabaseFile.exists())
@@ -50,6 +53,8 @@ public final class ServerInterface{
 
     /**
      * Creates a new line in a database file.
+     * @param DatabaseFile the database file.
+     * @param LineDate the new line to be added.
      */
     public int NewLine(File DatabaseFile, String LineData) throws IOException{
         if (!DatabaseFile.exists())
@@ -61,6 +66,8 @@ public final class ServerInterface{
 
     /**
      * Deletes a line in a database file.
+     * @param DatabaseFile the database file.
+     * @param DeletedLine the line to be deleted.
      */
     public int DeleteLine(File DatabaseFile, String DeletedLine) throws IOException{
         if (!DatabaseFile.exists())
@@ -80,6 +87,8 @@ public final class ServerInterface{
 
     /**
      * Reads a database file.
+     * @param DatabaseFile the database file.
+     * @return the list of string of each line read from the file.
      */
     public ArrayList<String> ReadFile(File DatabaseFile) throws IOException{
         ArrayList<String> data = new ArrayList<String>();

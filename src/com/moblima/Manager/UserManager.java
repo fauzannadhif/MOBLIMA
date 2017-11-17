@@ -32,6 +32,11 @@ public final class UserManager{
     /**
      * Books a movie with the given showtime
      * and seat number.
+     * @param user the user doing the booking.
+     * @param showtime the showtime to be booked.
+     * @param SeatRow the row of the booked seat.
+     * @param SeatColumn the column of the booked seat.
+     * @return the ticket ID.
      */
     public String bookMovie(User user, ShowTime showtime, int SeatRow, int SeatColumn){
         SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmm");
@@ -45,6 +50,9 @@ public final class UserManager{
     /**
      * Checks the ticket price of the given
      * showtime for the given user.
+     * @param user the user.
+     * @param showtime the showtime chosen.
+     * @return the price of the ticket.
      */
     public Double CheckPrice(User user, ShowTime showtime){
         TicketPrice ticketprice = new TicketPrice();
@@ -54,6 +62,8 @@ public final class UserManager{
 
     /**
      * Creates booking history in database.
+     * @param UserName the name of the user.
+     * @param newShowTime the showtime booked.
      */
     public void BookMovieToDB(String UserName, ShowTime newShowTime){
         File DatabaseFile = new File("data\\BookingHistory.txt");
@@ -68,6 +78,8 @@ public final class UserManager{
 
     /**
      * Lists all available movies.
+     * @param movies the movie list.
+     * @return list of movies.
      */
     public ArrayList<String> listMovie(MovieList movies){
         ArrayList<String> result=new ArrayList<String>();
@@ -79,6 +91,8 @@ public final class UserManager{
 
     /**
      * Lists the details of a movie.
+     * @param movie the chosen movie.
+     * @return the details of the movie.
      */
     public ArrayList<String> detailMovie(Movie movie){
         ArrayList<String> details= new ArrayList<String>();
@@ -95,6 +109,8 @@ public final class UserManager{
     /**
      * Gets the seat structure of the
      * given showtime.
+     * @param showTime the showtime to be checked.
+     * @return the seat layout of the showtime.
      */
     public ArrayList<String> seatStructure(ShowTime showTime){
         ArrayList<String> seatArrayList = new ArrayList<String>();
@@ -126,6 +142,9 @@ public final class UserManager{
 
     /**
      * Sorts the movies in the list.
+     * @param movies the movie list.
+     * @param choice 1 for ticket sales, 2 for average rating.
+     * @return  sorted list of movies.
      */
     public ArrayList<String> sortMovie(MovieList movies, int choice){
         return movies.sortMovie(choice);

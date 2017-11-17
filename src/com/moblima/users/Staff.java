@@ -33,6 +33,7 @@ public class Staff{
 
     /**
      * Gets the username of this staff.
+     * @return this staff's username.
      */
     public String getUsername(){
         return this.Username;
@@ -40,20 +41,23 @@ public class Staff{
 
     /**
      * Gets the password of this staff.
+     * @return this staff's password.
      */
     public String getPassword(){
         return this.Password;
     }
 
     /**
-     * Sets the username of this staff.
+     * Changes the username of this staff.
+     * @param username the new username.
      */
     public void setUsername(String username){
         this.Username = username;
     }
 
     /**
-     * Sets the password of this staff.
+     * Changes the password of this staff.
+     * @param password the new password.
      */
     public void setPassword(String password){
         this.Password = password;
@@ -63,6 +67,9 @@ public class Staff{
     /**
      * Checks the validity of the given
      * username and password.
+     * @param username the input username.
+     * @param password the input password.
+     * @return true if valid, else false. 
      */
     public static Boolean checkvalidity(String username, String password){
         try {
