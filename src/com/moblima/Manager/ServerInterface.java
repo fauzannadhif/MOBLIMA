@@ -10,15 +10,28 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.FileInputStream;
 
+/**
+ * Represents a class with methods for
+ * applications to access a database file.
+ */
 public final class ServerInterface{
     private static ServerInterface INSTANCE = new ServerInterface();
 
+    /**
+     * Default constructor.
+     */
     private ServerInterface(){};
 
+    /**
+     * Gets an instance of this class.
+     */
     public static ServerInterface getINSTANCE() {
         return INSTANCE;
     }
 
+    /**
+     * Rewrites a line in a database file.
+     */
     public int RewriteLine(File DatabaseFile, String OldString, String NewString) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
@@ -35,6 +48,9 @@ public final class ServerInterface{
         return 2;
     }
 
+    /**
+     * Creates a new line in a database file.
+     */
     public int NewLine(File DatabaseFile, String LineData) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
@@ -42,6 +58,9 @@ public final class ServerInterface{
         return 0;
     }
 
+    /**
+     * Deletes a line in a database file.
+     */
     public int DeleteLine(File DatabaseFile, String DeletedLine) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
@@ -58,6 +77,9 @@ public final class ServerInterface{
         return 2;
     }
 
+    /**
+     * Reads a database file.
+     */
     public ArrayList<String> ReadFile(File DatabaseFile) throws IOException{
         ArrayList<String> data = new ArrayList<String>();
         if (!DatabaseFile.exists())

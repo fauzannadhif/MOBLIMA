@@ -14,10 +14,17 @@ import com.moblima.movie.ShowTime;
 import com.moblima.movie.ShowTimeList;
 import com.moblima.movie.TicketPrice;
 
+/**
+ * Represents a manager for staff.
+ */
 public final class StaffManager{
     private ServerInterface DBInterface = ServerInterface.getINSTANCE();
     private SimpleDateFormat fmt = new SimpleDateFormat("yyyy;MM;dd;HH;mm;ss");
     private static final StaffManager INSTANCE = new StaffManager();
+    
+    /**
+     * Default constructor.
+     */
     private StaffManager(){};
 
     /**
@@ -27,6 +34,9 @@ public final class StaffManager{
         return INSTANCE;
     }
 
+    /**
+     * Adds a movie to a movie list.
+     */
     public void addMovie(Movie newMovie, MovieList Movies){
         Movies.addMovie(newMovie);
         File DatabaseFile = new File("data\\MovieList.txt");
@@ -56,6 +66,9 @@ public final class StaffManager{
         return;
     }
 
+    /**
+     * Updates the details of a movie.
+     */
     public void updateDetails(Movie chosenMovie){
         File DatabaseFile = new File("data\\MovieList.txt");
         String OldString = "";
@@ -91,6 +104,9 @@ public final class StaffManager{
         }
     }
 
+    /**
+     * Removes a movie from a movie list.
+     */
     public void removeMovie(Movie removedMovie, MovieList Movies){
         Movies.removeMovie(removedMovie);
         File DatabaseFile = new File("data\\MovieList.txt");
@@ -121,6 +137,9 @@ public final class StaffManager{
         
     }
 
+    /**
+     * Adds a showtime to a showtime list.
+     */
     public void createShowtime(ShowTime newShowTime, ShowTimeList ShowTimes){
         ShowTimes.addShowTimes(newShowTime);
         File DatabaseFile = new File("data\\ShowTimeList.txt");
@@ -132,6 +151,9 @@ public final class StaffManager{
         }
     }
 
+    /**
+     * Updates a showtime.
+     */
     public void updateShowTime(ShowTime updatedShowTime, Cineplex newCineplex, Cinema newCinema, GregorianCalendar newDate){
         updatedShowTime.setCinema(newCinema);
         updatedShowTime.setCineplex(newCineplex);
@@ -154,6 +176,9 @@ public final class StaffManager{
         }
     }
 
+    /**
+     * Removes a showtime from a showtime list.
+     */
     public void removeShowTime(ShowTime removedShowTime, ShowTimeList ShowTimes){
         ShowTimes.removeShowTimes(removedShowTime);
         File DatabaseFile = new File("data\\ShowTimeList.txt");
@@ -170,6 +195,9 @@ public final class StaffManager{
         }
     }
 
+    /**
+     * Configures the modifiers of ticket price.
+     */
     public void ConfigurePrice(Double[] newModifier){
         File DatabaseFile = new File("data\\Modifiers.txt");
         String NewString = "";
@@ -184,6 +212,9 @@ public final class StaffManager{
         }
     }
 
+    /**
+     * Adds a holiday date to the list in ticket price.
+     */
     public void addHoliday(String newDate, TicketPrice ticketPrice){
         ticketPrice.addHolidayDate(newDate);
         File DatabaseFile = new File("data\\HolidayDate.txt");
@@ -195,6 +226,9 @@ public final class StaffManager{
 
     }
 
+    /**
+     * Removes a holiday date from the list.
+     */
     public void removeHoliday(String removedDate, TicketPrice ticketPrice){
         ticketPrice.removeHolidayDate(removedDate);
         File DatabaseFile = new File("data\\HolidayDate.txt");

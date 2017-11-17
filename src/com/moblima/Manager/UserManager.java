@@ -12,12 +12,23 @@ import java.util.ArrayList;
 public final class UserManager{
     private ServerInterface DBInterface = ServerInterface.getINSTANCE();
     private static final UserManager INSTANCE = new UserManager();
-    private UserManager(){}
     
+    /**
+     * Default constructor.
+     */
+    private UserManager(){}
+
+    /**
+     * Gets an instance of this class.
+     */
     public static UserManager getInstance() {
         return INSTANCE;
     }
 
+    /**
+     * Books a movie with the given showtime
+     * and seat number.
+     */
     public String bookMovie(User user, ShowTime showtime, int SeatRow, int SeatColumn){
         SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmm");
         String bookingID = showtime.getCinema().getCinemaCode() + showtime.getDate().toString() + fmt.format(showtime.getDate().getTime());
@@ -26,12 +37,20 @@ public final class UserManager{
         BookMovieToDB(user.getName(), showtime);
         return bookingID;
     }
+
+    /**
+     * Checks the ticket price of the given
+     * showtime for the given user.
+     */
     public Double CheckPrice(User user, ShowTime showtime){
         TicketPrice ticketprice = new TicketPrice();
         Double price = ticketprice.getPrice(showtime.getDate(), user.getAge(), showtime.getCinema().getType(),showtime.getMovieShown().getType());
         return price;
     }
 
+    /**
+     * Creates booking history in database.
+     */
     public void BookMovieToDB(String UserName, ShowTime newShowTime){
         File DatabaseFile = new File("data\\BookingHistory.txt");
         SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
@@ -43,6 +62,9 @@ public final class UserManager{
         }
     }
 
+    /**
+     * Lists all available movies.
+     */
     public ArrayList<String> listMovie(MovieList movies){
         ArrayList<String> result=new ArrayList<String>();
         for (int i=0; i<movies.getMovie().size(); i++) {
@@ -50,7 +72,10 @@ public final class UserManager{
         }
         return result;
     }
-    
+
+    /**
+     * Lists the details of a movie.
+     */
     public ArrayList<String> detailMovie(Movie movie){
         ArrayList<String> details= new ArrayList<String>();
 		details.add(movie.getTitle());
@@ -63,6 +88,10 @@ public final class UserManager{
         return details;
     }
 
+    /**
+     * Gets the seat structure of the
+     * given showtime.
+     */
     public ArrayList<String> seatStructure(ShowTime showTime){
         ArrayList<String> seatArrayList = new ArrayList<String>();
         seatArrayList.add("  01 02 03 04 05 06 07 08    09 10 11 12 13 14 15 16");
@@ -90,7 +119,10 @@ public final class UserManager{
         seatArrayList.add("\n\n");
         return seatArrayList;
     }
-    
+
+    /**
+     * Sorts the movies in the list.
+     */
     public ArrayList<String> sortMovie(MovieList movies, int choice){
         return movies.sortMovie(choice);
     }
