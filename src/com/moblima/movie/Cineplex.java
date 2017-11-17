@@ -34,6 +34,7 @@ public class Cineplex{
 
     /**
      * Gets the name of this cineplex.
+     * @return this cineplex's name.
      */
     public String getName(){
         return this.Name;
@@ -41,6 +42,7 @@ public class Cineplex{
 
     /**
      * Gets the list of cinemas in this cineplex.
+     * @return this cineplex's cinema list.
      */
     public ArrayList<Cinema> getCinemaList(){
         return this.CinemaList;
@@ -48,6 +50,7 @@ public class Cineplex{
 
     /**
      * Gets the location of this cineplex.
+     * @return this cineplex's location.
      */
     public String getLocation(){
         return this.Location;
@@ -55,6 +58,7 @@ public class Cineplex{
 
     /**
      * Changes the name of this cineplex.
+     * @param name the new name.
      */
     public void setName(String name){
         this.Name = name;
@@ -62,6 +66,7 @@ public class Cineplex{
 
     /**
      * Changes the list of cinemas in this cineplex.
+     * @param CinemaList the new cinema list.
      */
     public void setCinemaList(ArrayList<Cinema> CinemaList){
         this.CinemaList = CinemaList;
@@ -69,6 +74,7 @@ public class Cineplex{
 
     /**
      * Changes the location of this cineplex.
+     * @param location the new location.
      */
     public void setLocation(String location){
         this.Location = location;

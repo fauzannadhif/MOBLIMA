@@ -48,6 +48,7 @@ public class ShowTime{
 
     /**
      * Gets the movie of this showtime.
+     * @return this showtime's movie.
      */
     public Movie getMovieShown() {
         return MovieShown;
@@ -55,6 +56,7 @@ public class ShowTime{
 
     /**
      * Gets the cinema of this showtime.
+     * @return this showtime's cinema.
      */
     public Cinema getCinema() {
         return cinema;
@@ -62,6 +64,7 @@ public class ShowTime{
 
     /**
      * Gets the cineplex of this showtime.
+     * @return this showtime's cineplex.
      */
     public Cineplex getCineplex() {
         return cineplex;
@@ -69,6 +72,7 @@ public class ShowTime{
 
     /**
      * Gets the date of this show time.
+     * @return this showtime's date.
      */
     public GregorianCalendar getDate() {
         return date;
@@ -76,6 +80,7 @@ public class ShowTime{
 
     /**
      * Gets the seats of this showtime.
+     * @return this showtime's seats.
      */
     public Seat getSeat() {
         return Seats;
@@ -83,6 +88,7 @@ public class ShowTime{
 
     /**
      * Changes the cinema of this showtime.
+     * @param cinema the new cinema.
      */
     public void setCinema(Cinema cinema) {
         this.cinema = cinema;
@@ -90,6 +96,7 @@ public class ShowTime{
 
     /**
      * Changes the cineplex of this showtime.
+     * @param cineplex the new cineplex.
      */
     public void setCineplex(Cineplex cineplex) {
         this.cineplex = cineplex;
@@ -97,6 +104,7 @@ public class ShowTime{
 
     /**
      * Changes the date of this showtime.
+     * @param date the new date.
      */
     public void setDate(GregorianCalendar date) {
         this.date = date;
@@ -104,6 +112,7 @@ public class ShowTime{
 
     /**
      * Changes the movie of this showtime.
+     * @param movieShown the new movie.
      */
     public void setMovieShown(Movie movieShown) {
         this.MovieShown = movieShown;

@@ -53,6 +53,7 @@ public class ShowTimeList {
 
     /**
      * Gets the list of showtimes.
+     * @return the showtimes in the list. 
      */
     public ArrayList<ShowTime> getShowTimes() {
         return showTimes;
@@ -60,6 +61,7 @@ public class ShowTimeList {
 
     /**
      * Add a new showtime to the list.
+     * @param newShowTime the new showtime.
      */
     public void addShowTimes(ShowTime newShowTime) {
         this.showTimes.add(newShowTime);
@@ -67,6 +69,7 @@ public class ShowTimeList {
 
     /**
      * Remove a showtime from the list.
+     * @param removedShowTime the showtime to be removed.
      */
     public void removeShowTimes(ShowTime removedShowTime){
 		showTimes.remove(showTimes.indexOf(removedShowTime));

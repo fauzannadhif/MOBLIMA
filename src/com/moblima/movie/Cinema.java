@@ -26,6 +26,7 @@ public class Cinema{
 
     /**
      * Gets the type of this cinema.
+     * @return this cinema's type.
      */
     public String getType(){
         return this.Type;
@@ -33,6 +34,7 @@ public class Cinema{
 
     /**
      * Gets the type of this cinema.
+     * @return this cinema's code.
      */
     public String getCinemaCode(){
         return this.CinemaCode;
@@ -40,6 +42,7 @@ public class Cinema{
 
     /**
      * Changes the type of this cinema.
+     * @param type the new type
      */
     public void setType(String type){
         this.Type = type;
@@ -47,6 +50,7 @@ public class Cinema{
 
     /**
      * Changes the code of this cinema.
+     * @param cinemaCode the new cinema code.
      */
     public void setCinemaCode(String cinemaCode){
         this.CinemaCode = cinemaCode;

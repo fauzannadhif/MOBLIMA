@@ -35,6 +35,7 @@ public final class CineplexList{
 
     /**
      * Gets an instance of this class.
+     * @return an instance of this class.
      */
     public static CineplexList getInstance() {
         return INSTANCE;
@@ -75,6 +76,7 @@ public final class CineplexList{
 
     /**
      * Gets the list of cineplexes.
+     * @return the list of cineplexes.
      */
     public ArrayList<Cineplex> getCineplex(){
         return Cineplexes;

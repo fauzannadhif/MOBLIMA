@@ -87,6 +87,7 @@ public class MovieList {
 
 	/**
 	 * Adds a new movie to the list.
+	 * @param newMovie the new movie.
 	 */
 	public void addMovie(Movie newMovie){
 		Movies.add(newMovie);
@@ -95,6 +96,7 @@ public class MovieList {
 
 	/**
 	 * Gets the list of movies.
+	 * @return the list of movies.
 	 */
 	public ArrayList<Movie> getMovie(){
 		return this.Movies;
@@ -102,6 +104,7 @@ public class MovieList {
 
 	/**
 	 * Remove a movie from the list.
+	 * @param removedMovie the movie to be removed.
 	 */
 	public void removeMovie(Movie removedMovie){
 		Movies.remove(Movies.indexOf(removedMovie));
@@ -110,6 +113,7 @@ public class MovieList {
 	/**
 	 * Sorts movie list according to
 	 * ticket sales or overall rating.
+	 * @param choice 1 for ticket sales, 2 for average rating. 
 	 */
 	public ArrayList<String> sortMovie(int choice){
 		ArrayList<Movie> sortedMovies = Movies;
@@ -157,6 +161,7 @@ public class MovieList {
 	 * Search for movies in the list with
 	 * the input string contained in
 	 * its title.
+	 * @param searchInput the string to be searched.
 	 */
 	public void searchMovie(String searchInput) {
 		int count = 0;

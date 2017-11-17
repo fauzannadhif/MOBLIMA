@@ -83,6 +83,10 @@ public class TicketPrice {
 	/**
 	 * Calculate the price of this ticket price
 	 * and returns it
+	 * @param date the showtime's date.
+	 * @param age the user's age.
+	 * @param cinemaclass the showtime's cinema's class.
+	 * @param movietype the showtime's movie's type. 
 	 */
 	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
@@ -106,6 +110,7 @@ public class TicketPrice {
 
 	/**
 	 * Changes the modifier of this ticket price.
+	 * @param Modifier the new ticket price's modifier.
 	 */
 	public void setModifier(Double[] Modifier) {
 		this.Modifier = Modifier;
@@ -113,6 +118,7 @@ public class TicketPrice {
 
 	/**
 	 * Gets the modifier of this ticket price.
+	 * @return this ticket price's modifiere.
 	 */
 	public Double[] getModifier() {
 		return this.Modifier;
@@ -120,6 +126,7 @@ public class TicketPrice {
 
 	/**
 	 * Changes the list of holiday dates.
+	 * @param HolidayDate the new holiday date.
 	 */
 	public void setHolidayDate(ArrayList<String> HolidayDate) {
 		this.HolidayDate = HolidayDate;
@@ -127,6 +134,7 @@ public class TicketPrice {
 
 	/**
 	 * Gets the list of holiday dates.
+	 * @return the list of holiday date.
 	 */
 	public ArrayList<String> getHolidayDate() {
 		return this.HolidayDate;
@@ -134,6 +142,7 @@ public class TicketPrice {
 
 	/**
 	 * Adds a new holiday date to the list.
+	 * @param addedHolidayDate the new holiday daye.
 	 */
 	public void addHolidayDate(String addedHolidayDate){
 		this.HolidayDate.add(addedHolidayDate);
@@ -141,6 +150,7 @@ public class TicketPrice {
 
 	/**
 	 * Removes a holiday date from the list.
+	 * @param removedHolidayDate holiday date to be removed
 	 */
 	public void removeHolidayDate(String removedHolidayDate){
 		this.HolidayDate.remove(removedHolidayDate);

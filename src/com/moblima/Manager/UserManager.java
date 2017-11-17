@@ -25,13 +25,17 @@ public final class UserManager{
         return INSTANCE;
     }
 
+    public void searchMovie(MovieList Movies, String searchInput){
+        Movies.searchMovie(searchInput);
+    }
+
     /**
      * Books a movie with the given showtime
      * and seat number.
      */
     public String bookMovie(User user, ShowTime showtime, int SeatRow, int SeatColumn){
         SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMddHHmm");
-        String bookingID = showtime.getCinema().getCinemaCode() + showtime.getDate().toString() + fmt.format(showtime.getDate().getTime());
+        String bookingID = showtime.getCinema().getCinemaCode() + fmt.format(showtime.getDate().getTime());
         showtime.getSeat().assignSeat(SeatRow, SeatColumn);
         user.addBookingHistory(bookingID);
         BookMovieToDB(user.getName(), showtime);

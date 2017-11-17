@@ -66,7 +66,7 @@ public class UserApplication {
 				String inputMovie = sc.next();
 				System.out.println("\n----------------\n");
 				System.out.println("Ok, here are the results of your search");
-				Movies.searchMovie(inputMovie);
+				usermgr.searchMovie(Movies, inputMovie);
 				break;
 				
 			case 2: //list movie
