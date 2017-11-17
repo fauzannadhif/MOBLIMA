@@ -33,6 +33,9 @@ public final class CineplexList{
         }
     }
 
+    /**
+     * Gets an instance of this class.
+     */
     public static CineplexList getInstance() {
         return INSTANCE;
     }
