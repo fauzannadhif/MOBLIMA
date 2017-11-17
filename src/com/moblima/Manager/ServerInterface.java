@@ -54,6 +54,7 @@ public final class ServerInterface{
     public int NewLine(File DatabaseFile, String LineData) throws IOException{
         if (!DatabaseFile.exists())
             return 1;
+        LineData = "\n"+LineData;
         Files.write(DatabaseFile.toPath(), LineData.getBytes(), StandardOpenOption.APPEND);
         return 0;
     }

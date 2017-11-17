@@ -379,7 +379,7 @@ public class StaffApplication {
 						System.out.println("What would you like to do?");
 						System.out.println("1. Add a holiday date");
 						System.out.println("2. Remove a holiday date");
-						SimpleDateFormat fmt2 = new SimpleDateFormat("yyyymmdd");
+						SimpleDateFormat fmt2 = new SimpleDateFormat("yyyyMMdd");
 						int choose = sc.nextInt();
 						System.out.println("\n----------------\n");
 						if(choose == 1){

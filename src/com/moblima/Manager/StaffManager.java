@@ -46,14 +46,15 @@ public final class StaffManager{
         LineDataList.add(newMovie.getSynopsis());
         LineDataList.add(newMovie.getDirector());
         LineDataList.add(newMovie.getType());
+        String CastString = "";
         for (String s: newMovie.getCast())
-            LineDataList.add(s);
-        for (Integer i: newMovie.getRating())
-            LineDataList.add(i.toString());
-        for (String s: newMovie.getCast())
-            LineDataList.add(s);
+            CastString = CastString + s + ";";
+        CastString.substring(0, CastString.length()-1);
+        LineDataList.add(CastString);
+        LineDataList.add(" ");
+        LineDataList.add(" ");        
         LineDataList.add(newMovie.getAgeRating());
-        LineDataList.add(String.valueOf(newMovie.getTicketSales()));
+        LineDataList.add("0");
         String LineData = "";
         for (String s: LineDataList)
             LineData += s + " | ";

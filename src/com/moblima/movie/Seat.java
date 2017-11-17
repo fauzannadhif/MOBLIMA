@@ -32,6 +32,7 @@ public class Seat{
 
     /**
      * Gets the arrays of seats.
+     * @return the arrays of seats.
      */
     public Boolean[][] getSeats(){
         return Seats;
@@ -39,12 +40,15 @@ public class Seat{
 
     /**
      * Changes the arrays of seats.
+     * @param Seats the new arrays of seats
      */
     public void setSeats(Boolean[][] Seats){
         this.Seats = Seats;
     }
 
     /**
+     * @param row the row number.
+     * @param column the column.
      * Assigns a seat to a person.
      */
     public void assignSeat(int row,int column){

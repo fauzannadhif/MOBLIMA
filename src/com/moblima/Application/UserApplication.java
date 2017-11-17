@@ -100,6 +100,13 @@ public class UserApplication {
 				System.out.println("Synopsis: " + MovieDetails.get(2));
 				System.out.println("Director: " + MovieDetails.get(3));
 				System.out.println("Casts: " + MovieDetails.get(4));
+				if (MovieDetails.get(5).equals("NaN")){
+					System.out.println("Overall reviewer rating: N/A");
+				}
+				else{
+					Double rating = Double.valueOf(MovieDetails.get(5));
+					System.out.printf("Overall reviewer rating: %.1f", rating);
+				}
 				System.out.println("Overall reviewer rating: " + MovieDetails.get(5));
 				System.out.println("Reviews: " + MovieDetails.get(6));
 				break;
@@ -210,7 +217,7 @@ public class UserApplication {
 				System.out.println("Cinema = " + ChosenShowTime.getCinema().getCinemaCode());
 				System.out.println("Time = " + fmt.format(ChosenShowTime.getDate().getTime()));
 				System.out.printf("Seat: row %c and column %d\n", (char) (int) (selectedrow+64), selectedcolumn);
-				System.out.printf("Price = %.1f", price);
+				System.out.printf("Price = %.1f\n", price);
 				System.out.println("Are you sure to Proceed?  [Input cancel to cancel everything]");
 				String Confirmation = sc.next();
 				if (Confirmation.equals("cancel")) break;
