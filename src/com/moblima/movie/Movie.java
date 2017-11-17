@@ -85,7 +85,7 @@ public class Movie {
 	
 	/**
 	 * Gets the title of this movie.
-	 * @return this Movie's Title.
+	 * @return this Movie's title.
 	 */
 	public String getTitle() {
 		return Title;
@@ -93,6 +93,7 @@ public class Movie {
 
 	/**
 	 * Changes the title of this movie.
+	 * @param title the new title.
 	 */
 	public void setTitle(String title) {
 		Title = title;
@@ -100,6 +101,7 @@ public class Movie {
 
 	/**
 	 * Gets the status of this movie.
+	 * @return this Movie's status.
 	 */
 	public String getStatus() {
 		return Status;
@@ -107,6 +109,7 @@ public class Movie {
 
 	/**
 	 * Changes the status of this movie.
+	 * @param status the new status.
 	 */
 	public void setStatus(String status) {
 		Status = status;
@@ -114,6 +117,7 @@ public class Movie {
 
 	/**
 	 * Gets the synopsis of this movie.
+	 * @return this Movie's synopsis.
 	 */
 	public String getSynopsis() {
 		return Synopsis;
@@ -121,6 +125,7 @@ public class Movie {
 
 	/**
 	 * Changes the synopsis of this movie.
+	 * @param synopsis the new synopsis.
 	 */
 	public void setSynopsis(String synopsis) {
 		Synopsis = synopsis;
@@ -128,6 +133,7 @@ public class Movie {
 
 	/**
 	 * Gets the director of this movie.
+	 * @return this Movie's director.
 	 */
 	public String getDirector() {
 		return Director;
@@ -135,6 +141,7 @@ public class Movie {
 
 	/**
 	 * Changes the director of this movie.
+	 * @param director the new director.
 	 */
 	public void setDirector(String director) {
 		Director = director;
@@ -142,6 +149,7 @@ public class Movie {
 
 	/**
 	 * Gets the type of this movie.
+	 * @return this movie's type.
 	 */
 	public String getType() {
 		return Type;
@@ -149,6 +157,7 @@ public class Movie {
 
 	/**
 	 * Changes the type of this movie.
+	 * @param type the new type
 	 */
 	public void setType(String type) {
 		Type = type;
@@ -156,6 +165,7 @@ public class Movie {
 
 	/**
 	 * Gets the cast of this movie.
+	 * @return this movie's casts
 	 */
 	public ArrayList<String> getCast() {
 		return Cast;
@@ -163,6 +173,7 @@ public class Movie {
 
 	/**
 	 * Changes the cast of this movie.
+	 * @param cast the new cast
 	 */
 	public void setCast(ArrayList<String> cast) {
 		Cast = cast;
@@ -170,6 +181,7 @@ public class Movie {
 
 	/**
 	 * Gets the average rating of this movie.
+	 * @return this movie's average rating.
 	 */
 	public Double getOverallRating() {
 		return OverallRating;
@@ -177,6 +189,7 @@ public class Movie {
 
 	/**
 	 * Gets the rating numbers of this movie.
+	 * @return this movie's ratings.
 	 */
 	public ArrayList<Integer> getRating() {
 		return Rating;
@@ -184,6 +197,7 @@ public class Movie {
 
 	/**
 	 * Adds a rating to this movie.
+	 * @param newRating the new rating.
 	 */
 	public void addRating(Integer newRating) {
 		this.Rating.add(newRating);
@@ -192,6 +206,7 @@ public class Movie {
 
 	/**
 	 * Gets the review of this movie.
+	 * @return this movie's review.
 	 */
 	public ArrayList<String> getReview() {
 		return Review;
@@ -199,6 +214,7 @@ public class Movie {
 
 	/**
 	 * Adds a review to this movie.
+	 * @param review the new review.
 	 */
 	public void addReview(String review) {
 		this.Review.add(review);
@@ -206,6 +222,7 @@ public class Movie {
 
 	/**
 	 * Gets the age rating of this movie.
+	 * @return this movie's age rating.
 	 */
 	public String getAgeRating() {
 		return AgeRating;
@@ -213,6 +230,7 @@ public class Movie {
 
 	/**
 	 * Sets the age rating of this movie.
+	 * @param ageRating the new age rating.
 	 */
 	public void setAgeRating(String ageRating) {
 		AgeRating = ageRating;
@@ -220,6 +238,7 @@ public class Movie {
 
 	/**
 	 * Gets the ticket sales of this movie.
+	 * @return this movie's ticket price.
 	 */
 	public int getTicketSales() {
 		return TicketSales;
@@ -227,6 +246,7 @@ public class Movie {
 
 	/**
 	 * Changes the ticket sales of this movie.
+	 * @param ticketsales the new ticket price.
 	 */
 	public void setTicketSales(int ticketsales) {
 		TicketSales = ticketsales;
