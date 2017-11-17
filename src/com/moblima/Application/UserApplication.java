@@ -10,11 +10,17 @@ import com.moblima.movie.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * The application for users.
+ */
 public class UserApplication {
 	private static Scanner sc = new Scanner(System.in);
 	private static User user;
 	private static UserManager usermgr = UserManager.getInstance();
-	
+
+	/**
+	 * The main method to run.
+	 */
 	public static void main() {
 		
 		System.out.println("Please enter your details below");

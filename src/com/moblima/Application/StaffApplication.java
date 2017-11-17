@@ -9,11 +9,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
+/**
+ * The application for staffs.
+ */
 public class StaffApplication {
 	private static Scanner sc = new Scanner(System.in);
 	private static StaffManager staffmgr = StaffManager.getInstance(); 
 	
-	
+	/**
+	 * The main method to run.
+	 */
 	public static void main() {
 		
 		System.out.println("Please login to continue [Input 0 to exit]");
