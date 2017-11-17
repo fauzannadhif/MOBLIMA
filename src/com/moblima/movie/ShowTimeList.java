@@ -77,6 +77,9 @@ public class ShowTimeList {
  
     /**
      * Reads showtimes from the database file.
+     * @param DatabaseFile the database file.
+     * @return the list of showtimes read from the database file.
+     * @throws IOException throws error in case of file error.
      */
     public ArrayList<ShowTime> readShowTimes(File DatabaseFile) throws IOException{
 		ArrayList<ShowTime> showtimes = new ArrayList<ShowTime>();

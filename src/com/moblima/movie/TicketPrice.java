@@ -48,6 +48,9 @@ public class TicketPrice {
 
 	/**
 	 * Reads the modifiers from database.
+	 * @param DatabaseFile the database file.
+	 * @return the list of modifiers.
+	 * @throws IOException throws error in case of error.
 	 */
 	public Double[] readModifiers(File DatabaseFile) throws IOException{
 		ArrayList<String> StringArray = DBinterface.ReadFile(DatabaseFile);
@@ -66,6 +69,9 @@ public class TicketPrice {
 
 	/**
 	 * Reads the holiday date from database.
+	 * @param DatabaseFile the database file.
+	 * @return list of holiday dates read from database file.
+	 * @throws IOException throws error in case of error. 
 	 */
 	public ArrayList<String> readHolidayDates(File DatabaseFile) throws IOException{
 		ArrayList<String> HolidayDates = new ArrayList<String>();
@@ -87,6 +93,7 @@ public class TicketPrice {
 	 * @param age the user's age.
 	 * @param cinemaclass the showtime's cinema's class.
 	 * @param movietype the showtime's movie's type. 
+	 * @return the ticket price.
 	 */
 	public Double getPrice(GregorianCalendar date, int age, String cinemaclass, String movietype) {
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");

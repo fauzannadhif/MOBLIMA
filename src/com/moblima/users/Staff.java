@@ -25,6 +25,8 @@ public class Staff{
     /**
      * Creates a staff with the given
      * username and password.
+     * @param username the username.
+     * @param password the password.
      */
     public Staff(String username, String password){
         this.Username = username;

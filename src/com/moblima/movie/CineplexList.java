@@ -43,6 +43,9 @@ public final class CineplexList{
 
     /**
      * Reads cineplexes from database file.
+     * @param DatabaseFile the database file.
+     * @return the list of strings of each line read.
+     * @throws IOException return error in case of file error.
      */
     public ArrayList<Cineplex> readCineplex(File DatabaseFile) throws IOException{
         ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);

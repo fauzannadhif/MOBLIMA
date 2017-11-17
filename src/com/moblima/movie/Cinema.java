@@ -18,6 +18,8 @@ public class Cinema{
     /**
      * Creates new cinema with the
      * given code and type.
+     * @param CinemaCode the given cinema code.
+     * @param Type the given cinema type.
      */
     public Cinema(String CinemaCode, String Type){
         this.CinemaCode = CinemaCode;

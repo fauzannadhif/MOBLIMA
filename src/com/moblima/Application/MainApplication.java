@@ -11,6 +11,7 @@ public class MainApplication {
 
 	/**
 	 * The main method to run.
+	 * @param args the input arguments.
 	 */
 	public static void main(String[] args){
 		

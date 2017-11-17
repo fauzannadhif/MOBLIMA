@@ -30,6 +30,8 @@ public class User{
     /**
      * Creates a user with the given name
      * and age.
+     * @param name name.
+     * @param age age.
      */
     public User(String name, int age){
         this.name = name;
@@ -45,6 +47,9 @@ public class User{
 
     /**
      * Reads the booking history from database file.
+     * @param DatabaseFile the database file.
+     * @return the list of booking histories.
+     * @throws IOException throw error in case of error.
      */
     public ArrayList<String> readBookingHistory(File DatabaseFile) throws IOException{
         ArrayList<String> StringArray = DBInterface.ReadFile(DatabaseFile);

@@ -64,6 +64,16 @@ public class Movie {
 
 	/**
 	 * Creates new movie with the given attributes
+	 * @param Title the title.
+	 * @param status the status.
+	 * @param Synopsis the synopsis.
+	 * @param Director the director.
+	 * @param Type the type.
+	 * @param Cast the casts.
+	 * @param Rating the rating.
+	 * @param Review the review.
+	 * @param AgeRating the age rating.
+	 * @param TicketSales the ticket sales.
 	 */
 	public Movie(String Title,String Status,String Synopsis,String Director,String Type,ArrayList<String> Cast,ArrayList<Integer> Rating, ArrayList<String> Review, String AgeRating, Integer TicketSales){
 		this.Title = Title;

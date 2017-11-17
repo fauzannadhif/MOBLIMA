@@ -24,6 +24,7 @@ public final class ServerInterface{
 
     /**
      * Gets an instance of this class.
+     * @return an instance of the singleton user interface.
      */
     public static ServerInterface getINSTANCE() {
         return INSTANCE;
@@ -34,6 +35,8 @@ public final class ServerInterface{
      * @param DatabaseFile the database file.
      * @param OldString the old line to be deleted.
      * @param NewString the new line to be written.
+     * @return error code.
+     * @throws IOException throws error in case of error.
      */
     public int RewriteLine(File DatabaseFile, String OldString, String NewString) throws IOException{
         if (!DatabaseFile.exists())
@@ -54,7 +57,9 @@ public final class ServerInterface{
     /**
      * Creates a new line in a database file.
      * @param DatabaseFile the database file.
-     * @param LineDate the new line to be added.
+     * @param LineData the new line to be added.
+     * @return error code.
+     * @throws IOException throws error in case of error.
      */
     public int NewLine(File DatabaseFile, String LineData) throws IOException{
         if (!DatabaseFile.exists())
@@ -68,6 +73,8 @@ public final class ServerInterface{
      * Deletes a line in a database file.
      * @param DatabaseFile the database file.
      * @param DeletedLine the line to be deleted.
+     * @return error code.
+     * @throws IOException throws error in case of error.
      */
     public int DeleteLine(File DatabaseFile, String DeletedLine) throws IOException{
         if (!DatabaseFile.exists())
@@ -89,6 +96,7 @@ public final class ServerInterface{
      * Reads a database file.
      * @param DatabaseFile the database file.
      * @return the list of string of each line read from the file.
+     * @throws IOException throws error in case of error.
      */
     public ArrayList<String> ReadFile(File DatabaseFile) throws IOException{
         ArrayList<String> data = new ArrayList<String>();

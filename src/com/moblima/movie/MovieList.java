@@ -35,7 +35,10 @@ public class MovieList {
 	}
 
 	/***
-	 * Reads movies from a database file
+	 * Reads movies from a database file.
+	 * @param DatabaseFile the database file.
+	 * @return list of movies.
+	 * @throws IOException throws error in case of file error.
 	 */
 	public ArrayList<Movie> readMovies(File DatabaseFile) throws IOException{
 		ArrayList<Movie> movies = new ArrayList<Movie>();
@@ -113,7 +116,8 @@ public class MovieList {
 	/**
 	 * Sorts movie list according to
 	 * ticket sales or overall rating.
-	 * @param choice 1 for ticket sales, 2 for average rating. 
+	 * @param choice 1 for ticket sales, 2 for average rating.
+	 * @return the sorted list of movies . 
 	 */
 	public ArrayList<String> sortMovie(int choice){
 		ArrayList<Movie> sortedMovies = Movies;

@@ -37,6 +37,10 @@ public class ShowTime{
     /**
      * Creates new showtime with the given
      * movie, cinema, date, and cineplex.
+     * @param MovieShown the movie.
+     * @param cinema the cinema.
+     * @param date the date.
+     * @param cineplex the cineplex.
      */
     public ShowTime(Movie MovieShown,Cinema cinema,GregorianCalendar date,Cineplex cineplex){
         this.MovieShown = MovieShown;

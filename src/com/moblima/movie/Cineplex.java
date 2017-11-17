@@ -25,6 +25,9 @@ public class Cineplex{
     /**
      * Creates new cineplex with the
      * given name, cinema list, and location.
+     * @param name the given cineplex name.
+     * @param cinemaList the given cinema list in cineplex.
+     * @param location the given location.
      */
     public Cineplex(String name, ArrayList<Cinema> cinemaList,String location){
         this.Name = name;

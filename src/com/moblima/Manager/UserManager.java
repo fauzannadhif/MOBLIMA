@@ -20,6 +20,7 @@ public final class UserManager{
 
     /**
      * Gets an instance of this class.
+     * @return instance of the class.
      */
     public static UserManager getInstance() {
         return INSTANCE;
